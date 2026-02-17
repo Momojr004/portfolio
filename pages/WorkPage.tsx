@@ -5,33 +5,33 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
 
 const projects = [
-  { 
-    id: 'neo-banking', 
-    title: 'NEO BANKING AI', 
-    category: 'FinTech / AI', 
-    // Vidéo Tech/Data direct mp4
-    video: 'https://cdn.pixabay.com/video/2023/10/20/185844-876733230_large.mp4' 
+  {
+    id: 'sap-station',
+    title: 'SAP STATION MANAGER',
+    category: 'Digitalisation / B2B',
+    description: 'Gestion digitale des franchises de stations-service au Sénégal',
+    video: './gallerie/vidéos/sap-demo.mp4'
   },
-  { 
-    id: 'crypto-dash', 
-    title: 'CRYPTO DASHBOARD', 
-    category: 'Web3 / Engineering', 
-    // Vidéo Code/Abstract direct mp4
-    video: 'https://cdn.pixabay.com/video/2021/04/12/70881-537443813_large.mp4' 
+  {
+    id: 'ecomed24',
+    title: 'ECOMED24 PLATFORM',
+    category: 'Santé Numérique / B2B',
+    description: 'Écosystème de santé numérique multidisciplinaire pour l\'Afrique',
+    video: './gallerie/vidéos/demo_ecomed24.mp4'
   },
-  { 
-    id: 'luxury-real', 
-    title: 'LUXURY ESTATE', 
-    category: 'Creative / Experience', 
-    // Vidéo Architecture/Style direct mp4
-    video: 'https://cdn.pixabay.com/video/2021/08/04/83901-584734614_large.mp4' 
+  {
+    id: 'restaurant-manager',
+    title: 'RESTAURANT MANAGER',
+    category: 'Gestion / B2B',
+    description: 'Plateforme complète de gestion pour restaurants et chaînes',
+    video: './gallerie/vidéos/demo_restaurant.mp4'
   },
-  { 
-    id: 'ai-agents', 
-    title: 'AI AGENTS OPS', 
-    category: 'Automation / B2B', 
-    // Vidéo Human/Interface direct mp4
-    video: 'https://cdn.pixabay.com/video/2023/06/15/167389-836934426_large.mp4' 
+  {
+    id: 'khayroukoum',
+    title: 'KHAYROUKOUM',
+    category: 'Impact Social / B2B',
+    description: 'Gestion des projets d\'accès à l\'eau potable en milieu rural',
+    video: './gallerie/vidéos/demo_khayroukoum.mp4'
   },
 ];
 
@@ -46,21 +46,21 @@ const WorkPage: React.FC = () => {
       className="pt-40 pb-40 px-6 md:px-20"
     >
       <div className="max-w-7xl mx-auto mb-32">
-        <motion.h1 
+        <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           className="text-7xl md:text-[12rem] font-black tracking-tighter leading-none mb-10"
         >
-          SELECTED <br/> <span className="text-[#CCFF00]">WORKS.</span>
+          SELECTED <br /> <span className="text-[#CCFF00]">WORKS.</span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className={`text-xl md:text-2xl max-w-2xl font-medium ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}
+          className={`text-xl md:text-2xl max-w-2xl font-medium ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}
         >
-          Une immersion dans des solutions digitales où la performance technique s'aligne sur les objectifs business.
+          De la digitalisation des PME africaines aux plateformes de santé numérique, découvrez des solutions qui transforment les secteurs traditionnels.
         </motion.p>
       </div>
 
@@ -78,14 +78,14 @@ const WorkPage: React.FC = () => {
               <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-zinc-900 mb-8 transform-gpu shadow-2xl">
                 {/* Overlay pour le contraste initial (Grayscale & Brightness gérés par le CSS de la vidéo) */}
                 <div className="absolute inset-0 bg-black/10 z-10 transition-opacity group-hover:opacity-0" />
-                
-                <video 
-                  autoPlay 
-                  muted 
-                  loop 
+
+                <video
+                  autoPlay
+                  muted
+                  loop
                   playsInline
                   preload="auto"
-                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out transform-gpu"
+                  className="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out transform-gpu"
                 >
                   <source src={project.video} type="video/mp4" />
                   Your browser does not support the video tag.
@@ -93,7 +93,7 @@ const WorkPage: React.FC = () => {
 
                 {/* Badge catégorie flottant */}
                 <div className="absolute top-8 left-8 z-20 overflow-hidden">
-                  <motion.span 
+                  <motion.span
                     initial={{ y: "100%" }}
                     whileInView={{ y: 0 }}
                     transition={{ duration: 0.4, delay: 0.3 }}
@@ -120,8 +120,8 @@ const WorkPage: React.FC = () => {
 
       <div className="mt-60 text-center">
         <p className={`text-sm font-bold uppercase tracking-[0.5em] mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Prêt pour le prochain ?</p>
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className={`text-3xl md:text-5xl font-black underline decoration-[#CCFF00] decoration-4 underline-offset-8 hover:text-[#CCFF00] transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}
         >
           RETOUR À L'ACCUEIL

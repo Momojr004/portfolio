@@ -43,20 +43,25 @@ export const Hero: React.FC = () => {
           </motion.p>
           <motion.h1
             variants={item}
-            className={`text-6xl lg:text-[9rem] xl:text-[11rem] font-[900] leading-[0.8] tracking-[-0.04em] mb-8 ${isDark ? 'text-white' : 'text-zinc-900'}`}
+            className={`text-4xl sm:text-5xl lg:text-[4rem] xl:text-[5rem] font-[900] leading-[0.8] tracking-[-0.04em] mb-8 ${isDark ? 'text-white' : 'text-zinc-800'}`}
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            JE PARLE <br />
-            <span className="text-[#CCFF00]">BUSINESS</span> <br />
-            AVANT <br />
-            <span className="italic">CODE.</span>
+            Developpeur <br />
+            <span className="text-[#CCFF00]">FULL-STACK</span> &<br />
+
+            <span className="italic"> ENTREPRENEUR TECH</span>
           </motion.h1>
+          <motion.p
+            variants={item}
+            className={`text-2xl sm:text-3xl lg:text-[2rem] max-w-xl font-[800] leading-relaxed ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}
+          >
+            Co-fondateur <strong className="text-[#CCFF00]">TerangaDev</strong> & Full Stack Developer <strong className="text-[#CCFF00]">EcoMed24</strong>. <br />
+          </motion.p>
           <motion.p
             variants={item}
             className={`text-xl md:text-2xl max-w-xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}
           >
-            Je transforme des idées claires en applications rentables. <br />
-            <strong className="text-[#CCFF00]">Architecture, IA & Vision Produit.</strong>
+            Développeur orienté produit, pas juste lignes de code. Je transforme des idées claires en applications rentables.
           </motion.p>
         </motion.div>
       </div>

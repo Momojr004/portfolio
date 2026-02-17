@@ -28,11 +28,10 @@ export const Navbar: React.FC = () => {
             <Link
               key={item.label}
               to={item.path}
-              className={`text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                location.pathname === item.path 
-                ? 'text-[#CCFF00]' 
-                : (isDark ? 'text-zinc-500 hover:text-white' : 'text-zinc-400 hover:text-black')
-              }`}
+              className={`text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${location.pathname === item.path
+                  ? 'text-[#CCFF00]'
+                  : (isDark ? 'text-zinc-500 hover:text-white' : 'text-zinc-400 hover:text-black')
+                }`}
             >
               {item.label}
             </Link>
@@ -40,20 +39,20 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button 
+          <button
             onClick={toggleTheme}
-            className={`p-2 rounded-full border transition-all ${
-              isDark ? 'border-zinc-800 text-white hover:bg-white hover:text-black' : 'border-zinc-300 text-zinc-900 hover:bg-black hover:text-white'
-            }`}
+            className={`p-2 rounded-full border transition-all ${isDark ? 'border-zinc-800 text-white hover:bg-white hover:text-black' : 'border-zinc-300 text-zinc-900 hover:bg-black hover:text-white'
+              }`}
           >
-            {isDark ? <Sun size={14}/> : <Moon size={14}/>}
+            {isDark ? <Sun size={14} /> : <Moon size={14} />}
           </button>
 
-          <Link 
+          <Link
             to="/contact"
-            className="hidden md:block px-6 py-2 border border-[#CCFF00] rounded-full text-xs font-bold uppercase tracking-widest text-[#CCFF00] hover:bg-[#CCFF00] hover:text-black transition-all"
+            className="px-3 md:px-6 py-2 border border-[#CCFF00] rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#CCFF00] hover:bg-[#CCFF00] hover:text-black transition-all"
           >
-            Contact
+            <span className="hidden sm:inline">Contact</span>
+            <span className="sm:hidden">•</span>
           </Link>
         </div>
       </div>

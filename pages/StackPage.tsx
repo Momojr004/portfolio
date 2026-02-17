@@ -7,53 +7,60 @@ import { Layers, Code2, Cpu, Globe, Rocket, Terminal, Database, ShieldCheck } fr
 
 const techGroups = [
   {
-    title: "Frontend Engineering",
+    title: "Frontend Development",
     icon: <Globe className="w-6 h-6" />,
     items: [
       { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs/white" },
       { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
-      { name: "Tailwind", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-      { name: "Three.js", logo: "https://cdn.simpleicons.org/threedotjs/white" }
+      { name: "Flutter", logo: "https://cdn.simpleicons.org/flutter/02569B" },
+      { name: "Tailwind CSS", logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+      { name: "shadcn/ui", logo: "https://cdn.simpleicons.org/shadcnui/white" },
+      { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap/7952B3" },
+      { name: "Ant Design", logo: "https://cdn.simpleicons.org/antdesign/0170FE" }
     ]
   },
   {
-    title: "Backend & Systems",
+    title: "Backend & API",
     icon: <Code2 className="w-6 h-6" />,
     items: [
+      { name: "Laravel", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+      { name: "NestJS", logo: "https://cdn.simpleicons.org/nestjs/E0234E" },
       { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/339933" },
-      { name: "FastAPI", logo: "https://cdn.simpleicons.org/fastapi/05998B" },
+      { name: "Express.js", logo: "https://cdn.simpleicons.org/express/white" },
+      { name: "PHP", logo: "https://cdn.simpleicons.org/php/777BB4" },
+      { name: "Eloquent ORM", logo: "https://cdn.simpleicons.org/laravel/FF2D20" }
+    ]
+  },
+  {
+    title: "Database & Storage",
+    icon: <Database className="w-6 h-6" />,
+    items: [
+      { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "PostgreSQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-      { name: "Redis", logo: "https://cdn.simpleicons.org/redis/DC382D" },
-      { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" }
+      { name: "SQLite", logo: "https://cdn.simpleicons.org/sqlite/003B57" },
+      { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "AWS", logo: "https://cdn.simpleicons.org/amazonaws/FF9900" }
     ]
   },
   {
-    title: "AI & Automation",
-    icon: <Cpu className="w-6 h-6" />,
+    title: "Business & Tools",
+    icon: <Rocket className="w-6 h-6" />,
     items: [
-      { name: "OpenAI", logo: "https://cdn.simpleicons.org/openai/412991" },
-      { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/white" },
-      { name: "Pinecone", logo: "https://cdn.simpleicons.org/pinecone/white" },
-      { name: "Hugging Face", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
-      { name: "Agents", logo: "https://cdn.simpleicons.org/anthropic/white" }
-    ]
-  },
-  {
-    title: "DevOps & Cloud",
-    icon: <Layers className="w-6 h-6" />,
-    items: [
-      { name: "AWS", logo: "https://cdn.simpleicons.org/amazonaws/FF9900" },
+      { name: "Laravel Sanctum", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
+      { name: "TanStack Query", logo: "https://cdn.simpleicons.org/reactquery/FF4154" },
+      { name: "Vite", logo: "https://cdn.simpleicons.org/vite/646CFF" },
       { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
-      { name: "Vercel", logo: "https://cdn.simpleicons.org/vercel/white" },
-      { name: "Terraform", logo: "https://cdn.simpleicons.org/terraform/7B42BC" },
-      { name: "GitHub", logo: "https://cdn.simpleicons.org/github/white" }
+      { name: "Git", logo: "https://cdn.simpleicons.org/git/F05032" },
+      { name: "Postman", logo: "https://cdn.simpleicons.org/postman/FF6C37" },
+      { name: "JWT", logo: "https://cdn.simpleicons.org/jsonwebtokens/white" },
+      { name: "Swagger", logo: "https://cdn.simpleicons.org/swagger/85EA2D" },
+      { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E" }
     ]
   }
 ];
 
 const secondaryIcons = [
-  "Figma", "Stripe", "Docker", "Git", "Kubernetes", "Sentry", "Postman", "Linux", "MongoDB", "Slack", "Discord", "Vite"
+  "Laravel", "Flutter", "NestJS", "MySQL", "PostgreSQL", "Vite", "Docker", "AWS", "TypeScript", "PHP", "Tailwindcss", "Git", "Bootstrap", "Antdesign", "Express", "Postman", "Figma", "Swagger"
 ];
 
 const StackPage: React.FC = () => {
@@ -72,7 +79,7 @@ const StackPage: React.FC = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-            className="text-7xl md:text-[12rem] font-black tracking-tighter leading-none mb-10"
+            className="text-4xl sm:text-6xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tighter leading-none mb-10"
           >
             ENGINEERING <br /> <span className="text-[#CCFF00]">STACK.</span>
           </motion.h1>
@@ -82,7 +89,7 @@ const StackPage: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className={`text-xl md:text-3xl max-w-3xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}
           >
-            Je choisis les outils non pas par tendance, mais pour leur capacité à résoudre des problèmes d'affaires complexes à l'échelle.
+            Stack orientée business : Laravel pour la robustesse backend, React/Flutter pour l'UX, et des bases de données adaptées aux besoins africains.
           </motion.p>
         </header>
 
@@ -114,8 +121,8 @@ const StackPage: React.FC = () => {
           {techGroups.map((group, idx) => (
             <TiltCard key={group.title} intensity={12} className="h-full">
               <div className={`p-10 md:p-12 rounded-[3rem] border-2 transition-colors relative group h-full ${isDark
-                  ? 'bg-zinc-900/40 border-zinc-800/50 hover:border-[#CCFF00]/50'
-                  : 'bg-white border-zinc-100 hover:border-[#CCFF00]'
+                ? 'bg-zinc-900/40 border-zinc-800/50 hover:border-[#CCFF00]/50'
+                : 'bg-white border-zinc-100 hover:border-[#CCFF00]'
                 }`}>
                 <div className="flex items-center gap-4 mb-10">
                   <div className="p-4 bg-[#CCFF00] rounded-2xl text-black shadow-[0_0_20px_rgba(204,255,0,0.2)]">
@@ -132,14 +139,14 @@ const StackPage: React.FC = () => {
                       key={tech.name}
                       whileHover={{ scale: 1.05, borderColor: "#CCFF00" }}
                       className={`flex items-center gap-3 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all cursor-default ${isDark
-                          ? 'border-zinc-800 bg-zinc-900/50 text-zinc-300 hover:text-[#CCFF00]'
-                          : 'border-zinc-200 bg-zinc-50 text-zinc-600 hover:text-black'
+                        ? 'border-zinc-800 bg-zinc-900/50 text-zinc-300 hover:text-[#CCFF00]'
+                        : 'border-zinc-200 bg-zinc-50 text-zinc-600 hover:text-black'
                         }`}
                     >
                       <img
                         src={tech.logo}
                         alt={tech.name}
-                        className={`w-4 h-4 ${tech.name === 'Next.js' || tech.name === 'GitHub' || tech.name === 'Three.js' ? 'invert opacity-80' : ''}`}
+                        className={`w-4 h-4 ${tech.name === 'shadcn/ui' || tech.name === 'Eloquent ORM' || tech.name === 'Laravel Sanctum' || tech.name === 'Express.js' || tech.name === 'JWT' ? 'invert opacity-80' : ''}`}
                       />
                       {tech.name}
                     </motion.span>

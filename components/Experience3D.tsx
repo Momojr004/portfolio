@@ -1,10 +1,10 @@
 
 import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
-import { 
-  Float, 
-  MeshTransmissionMaterial, 
-  OrbitControls, 
+import {
+  Float,
+  MeshTransmissionMaterial,
+  OrbitControls,
   Sphere,
   Environment,
   ContactShadows,
@@ -42,7 +42,8 @@ declare module 'react' {
 
 const InnerPortrait = () => {
   const meshRef = useRef<THREE.Mesh>(null);
-  const texture = useTexture('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&q=80');
+  // Utilise la vraie photo de Mouhamed depuis le dossier gallerie
+  const texture = useTexture('./gallerie/photos/profil.jpeg');
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -55,11 +56,11 @@ const InnerPortrait = () => {
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
       <circleGeometry args={[1.3, 64]} />
-      <meshBasicMaterial 
-        map={texture} 
-        side={THREE.DoubleSide} 
-        transparent 
-        opacity={1} 
+      <meshBasicMaterial
+        map={texture}
+        side={THREE.DoubleSide}
+        transparent
+        opacity={1}
         toneMapped={false}
       />
     </mesh>
@@ -68,7 +69,7 @@ const InnerPortrait = () => {
 
 const VisionarySphere = () => {
   const shellRef = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (shellRef.current) {
@@ -116,12 +117,12 @@ export const Experience3D: React.FC = () => {
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} intensity={2.5} color="#CCFF00" />
           <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
-          
+
           <VisionarySphere />
           <Environment preset="studio" />
-          
+
           <ContactShadows position={[0, -2.5, 0]} opacity={0.3} scale={10} blur={3} far={4} />
-          
+
           <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
         </Suspense>
       </Canvas>
