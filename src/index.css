@@ -1,5 +1,55 @@
 @import "tailwindcss";
 
+/* Focus styles pour l'accessibilité */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #CCFF00;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Style spécial pour les éléments sombres */
+.theme-dark button:focus-visible,
+.theme-dark a:focus-visible {
+    outline: 2px solid #CCFF00;
+    box-shadow: 0 0 0 4px rgba(204, 255, 0, 0.1);
+}
+
+.theme-light button:focus-visible,
+.theme-light a:focus-visible {
+    outline: 2px solid #000;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Améliorer la visibilité des liens de navigation */
+.nav-link:focus-visible {
+    background-color: rgba(204, 255, 0, 0.1);
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: -4px -8px;
+}
+
+/* Skip link pour navigation clavier */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 8px;
+    background: #CCFF00;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 8px;
+}
+
 /* Custom styles */
 body {
     transition: background-color 0.5s ease, color 0.5s ease;

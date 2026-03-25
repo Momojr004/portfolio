@@ -4,70 +4,19 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { ThemeContext } from '../App';
+import { getProjectById } from '../data/projects';
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { isDark } = useContext(ThemeContext);
 
-  // Données des projets réels
-  const projectsData: Record<string, any> = {
-    'sap-station': {
-      title: 'SAP STATION MANAGER',
-      year: '2024',
-      client: 'Franchise Stations-Service Sénégal',
-      role: 'Frontend Developer (Prestataire)',
-      stack: ['Laravel', 'React', 'MySQL', 'Tailwind CSS', 'AWS'],
-      desc: 'Digitalisation complète du processus de gestion d\'une franchise de station-service basée au Sénégal. Interface de gestion des ventes, stocks, employés et rapports financiers.',
-      solution: 'Architecture React modulaire avec API Laravel pour gérer les opérations quotidiennes : ventes de carburant, gestion des stocks, suivi des employés, et génération de rapports en temps réel.',
-      video: '/gallerie/vidéos/sap-demo.mp4',
-      liveUrl: 'https://sap-station-demo.mohamedpouye.dev',
-      features: ['Gestion des ventes', 'Suivi des stocks', 'Tableau de bord admin', 'Rapports financiers'],
-      galleryImages: ['/gallerie/photos/sap_001.png', '/gallerie/photos/sap_002.png']
-    },
-    'ecomed24': {
-      title: 'ECOMED24 PLATFORM',
-      year: '2024',
-      client: 'EcoMed24',
-      role: 'Full Stack Developer',
-      stack: ['Node.js', 'React', 'MySQL', 'AWS'],
-      desc: 'Écosystème de santé numérique multidisciplinaire pour les professionnels de santé en Afrique.',
-      solution: 'Plateforme intégrée avec téléconsultation, gestion des dossiers patients, collaboration entre professionnels et digitalisation des flux financiers.',
-      video: '/gallerie/vidéos/demo_ecomed24.mp4',
-      liveUrl: 'https://ecomed24.com',
-      features: ['Téléconsultation', 'Dossiers patients', 'Collaboration médicale', 'Flux financiers'],
-      galleryImages: ['/gallerie/photos/ecomed_001.png', '/gallerie/photos/ecomed_002.png']
-    },
-    'restaurant-manager': {
-      title: 'RESTAURANT MANAGER',
-      year: '2024',
-      client: 'Chaînes de Restaurants',
-      role: 'Full Stack Developer (100%)',
-      stack: ['Flutter', 'NestJS', 'PostgreSQL', 'MongoDB'],
-      desc: 'Application complète de gestion pour restaurants avec interface de supervision pour propriétaires et console admin.',
-      solution: 'Architecture hybride avec base de données mixte, gestion des abonnements, et tableau de bord multi-niveaux pour gérants et propriétaires.',
-      video: '/gallerie/vidéos/demo_restaurant.mp4',
-      liveUrl: 'https://restaurant-manager-demo.mohamedpouye.dev',
-      features: ['Gestion commandes', 'Supervision multi-restaurants', 'Console admin', 'Gestion abonnements'],
-      galleryImages: ['/gallerie/photos/restau_001.png', '/gallerie/photos/restau_002.png']
-    },
-    'khayroukoum': {
-      title: 'KHAYROUKOUM',
-      year: '2024',
-      client: 'Projets Humanitaires',
-      role: 'Architecte Full Stack',
-      stack: ['Laravel', 'React', 'TypeScript', 'Tailwind CSS', 'SQLite/MySQL'],
-      desc: 'Plateforme web complète dédiée à la gestion des projets d\'accès à l\'eau potable en milieu rural.',
-      solution: 'Architecture MVC moderne avec Laravel 12 et React 18.3, utilisant Eloquent ORM et Laravel Sanctum pour l\'authentification. Interface construite avec shadcn/ui et TanStack Query pour une gestion d\'état optimisée.',
-      video: '/gallerie/vidéos/demo_khayroukoum.mp4',
-      liveUrl: 'https://khayroukoum.org',
-      features: ['Gestion projets hydrauliques', 'Suivi financements', 'Rôles avancés', 'API REST documentée'],
-      galleryImages: ['/gallerie/photos/khayroukoum001.png', '/gallerie/photos/khayroukoum002.png']
-    }
-  };
-
-  const project = projectsData[id || ''] || {
+  const project = getProjectById(id || '') || {
+    id: 'not-found',
     title: 'PROJECT NOT FOUND',
+    category: 'Error',
+    description: 'Projet non trouvé',
+    img: '',
     year: '2024',
     client: 'Unknown',
     role: 'Developer',
@@ -98,7 +47,8 @@ const ProjectDetails: React.FC = () => {
       <div className="px-6 md:px-20 mb-12 flex justify-between items-center">
         <button
           onClick={handleBack}
-          className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs hover:text-[#CCFF00] transition-all cursor-pointer group"
+          aria-label="Retourner à la page précédente"
+          className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs hover:text-[#CCFF00] transition-all cursor-pointer group focus-visible:outline-2 focus-visible:outline-[#CCFF00]"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Projects
         </button>

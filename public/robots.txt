@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mohamedpouye.dev/sitemap.xml
+
+# Optimisations spécifiques
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.env*
+Disallow: /package.json
+Disallow: /vite.config.ts
+
+# Allow important resources  
+Allow: /gallerie/
+Allow: /icons/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.svg
+Allow: /*.img
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.mp4
+
+# Crawl delay pour éviter la surcharge
+Crawl-delay: 1

@@ -4,37 +4,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
 import SEO from '../components/SEO';
+import OptimizedVideo from '../components/OptimizedVideo';
+import { getWorkProjects } from '../data/projects';
 
-const projects = [
-  {
-    id: 'sap-station',
-    title: 'SAP STATION MANAGER',
-    category: 'Digitalisation / B2B',
-    description: 'Gestion digitale des franchises de stations-service au Sénégal',
-    video: '/gallerie/vidéos/sap-demo.mp4'
-  },
-  {
-    id: 'ecomed24',
-    title: 'ECOMED24 PLATFORM',
-    category: 'Santé Numérique / B2B',
-    description: 'Écosystème de santé numérique multidisciplinaire pour l\'Afrique',
-    video: '/gallerie/vidéos/demo_ecomed24.mp4'
-  },
-  {
-    id: 'restaurant-manager',
-    title: 'RESTAURANT MANAGER',
-    category: 'Gestion / B2B',
-    description: 'Plateforme complète de gestion pour restaurants et chaînes',
-    video: '/gallerie/vidéos/demo_restaurant.mp4'
-  },
-  {
-    id: 'khayroukoum',
-    title: 'KHAYROUKOUM',
-    category: 'Impact Social / B2B',
-    description: 'Gestion des projets d\'accès à l\'eau potable en milieu rural',
-    video: '/gallerie/vidéos/demo_khayroukoum.mp4'
-  },
-];
+const projects = getWorkProjects();
 
 const WorkPage: React.FC = () => {
   const { isDark } = useContext(ThemeContext);
@@ -83,20 +56,15 @@ const WorkPage: React.FC = () => {
             >
               <Link to={`/project/${project.id}`} className="block">
                 <div className="relative aspect-[16/10] md:aspect-[4/5] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-zinc-900 mb-8 transform-gpu shadow-2xl">
-                  {/* Overlay pour le contraste initial (Grayscale & Brightness gérés par le CSS de la vidéo) */}
+                  {/* Overlay pour le contraste initial */}
                   <div className="absolute inset-0 bg-black/10 z-10 transition-opacity group-hover:opacity-0" />
 
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
+                  <OptimizedVideo
+                    src={project.video}
+                    autoPlay={true}
                     className="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out transform-gpu"
-                  >
-                    <source src={project.video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                    poster={`${project.video.replace('.mp4', '-poster.jpg')}`}
+                  />
 
                   {/* Badge catégorie flottant */}
                   <div className="absolute top-8 left-8 z-20 overflow-hidden">

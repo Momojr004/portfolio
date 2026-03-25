@@ -5,15 +5,64 @@ import { ThemeContext } from '../App';
 import { Mail, MapPin, Clock, ArrowRight, Send } from 'lucide-react';
 import SEO from '../components/SEO';
 import { TiltCard } from '../components/TiltCard';
+import emailService, { ContactFormData } from '../services/emailService';
+import { sendWeb3Form } from '../services/web3FormService';
+import FileUpload from '../components/FileUpload';
 
 const ContactPage: React.FC = () => {
   const { isDark } = useContext(ThemeContext);
-  const [formState, setFormState] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Vérifier si EmailJS est configuré
+  const emailJSStatus = emailService.getConfigurationStatus();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('sending');
-    setTimeout(() => setFormState('success'), 2000);
+    setErrorMessage('');
+
+    // Récupérer les données du formulaire
+    const formData = new FormData(e.currentTarget);
+    const contactData: ContactFormData = {
+      fullName: formData.get('fullName') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+      attachments: attachedFiles.length > 0 ? attachedFiles : undefined,
+    };
+
+    try {
+      // FALLBACK : Web3Forms si EmailJS échoue (pendant config Gmail)
+      const web3Result = await sendWeb3Form({
+        name: contactData.fullName,
+        email: contactData.email,
+        message: contactData.message
+      });
+
+      if (web3Result.success) {
+        setFormState('success');
+        (e.target as HTMLFormElement).reset();
+        setAttachedFiles([]); // Réinitialiser les fichiers
+        return;
+      }
+
+      // Sinon essayer EmailJS (si configuré)
+      const result = await emailService.sendContactForm(contactData);
+
+      if (result.success) {
+        setFormState('success');
+        (e.target as HTMLFormElement).reset();
+        setAttachedFiles([]); // Réinitialiser les fichiers
+      } else {
+        setFormState('error');
+        setErrorMessage(result.message);
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setFormState('error');
+      setErrorMessage('Une erreur inattendue s\'est produite. Veuillez réessayer.');
+    }
   };
 
   return (
@@ -79,6 +128,19 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Right Column: Form */}
+          {/* Bandeau dev - statut EmailJS */}
+          {import.meta.env.DEV && (
+            <div className={`mb-4 p-3 rounded-lg text-xs ${emailJSStatus.configured
+                ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+                : 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
+              }`}>
+              <div className="flex items-center gap-2">
+                <span className={`w-2 h-2 rounded-full ${emailJSStatus.configured ? 'bg-green-400' : 'bg-orange-400'}`}></span>
+                <span className="font-mono">{emailJSStatus.message}</span>
+              </div>
+            </div>
+          )}
+
           <div className="relative">
             <TiltCard className={`p-8 md:p-12 rounded-[3rem] border-2 transition-colors relative ${isDark ? 'bg-zinc-900/40 border-zinc-800/50' : 'bg-white border-zinc-100'
               }`}>
@@ -95,50 +157,95 @@ const ContactPage: React.FC = () => {
                   <p className="text-zinc-500 font-medium">Je reviens vers vous dans les prochaines 24 heures.</p>
                   <button
                     onClick={() => setFormState('idle')}
-                    className="text-xs font-black uppercase tracking-widest underline decoration-[#CCFF00] underline-offset-8"
+                    aria-label="Envoyer un autre message"
+                    className="text-xs font-black uppercase tracking-widest underline decoration-[#CCFF00] underline-offset-8 focus-visible:outline-2 focus-visible:outline-[#CCFF00]"
                   >
                     Envoyer un autre message
                   </button>
                 </motion.div>
+              ) : formState === 'error' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="py-20 text-center space-y-6"
+                >
+                  <div className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mx-auto text-white">
+                    <Send size={32} />
+                  </div>
+                  <h3 className="text-3xl font-black uppercase tracking-tighter">Erreur d'envoi</h3>
+                  <p className="text-zinc-500 font-medium">{errorMessage}</p>
+                  <button
+                    onClick={() => setFormState('idle')}
+                    aria-label="Réessayer l'envoi"
+                    className="text-xs font-black uppercase tracking-widest underline decoration-red-500 underline-offset-8 focus-visible:outline-2 focus-visible:outline-red-500"
+                  >
+                    Réessayer
+                  </button>
+                </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-8"
+                >
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Nom complet</label>
+                    <label htmlFor="fullName" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Nom complet</label>
                     <input
+                      id="fullName"
+                      name="fullName"
                       required
                       type="text"
                       placeholder="John Doe"
-                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
+                      aria-describedby="fullName-error"
+                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Email professionnel</label>
+                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Email professionnel</label>
                     <input
+                      id="email"
+                      name="email"
                       required
                       type="email"
                       placeholder="john@company.com"
-                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
+                      aria-describedby="email-error"
+                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Votre Message</label>
+                    <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Message</label>
                     <textarea
+                      id="message"
+                      name="message"
                       required
                       rows={4}
                       placeholder="Parlez-moi de votre vision..."
-                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl resize-none ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
+                      aria-describedby="message-error"
+                      className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl resize-none focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
+                    />
+                  </div>
+
+                  {/* Upload de fichiers */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Documents joints (optionnel)</label>
+                    <FileUpload
+                      files={attachedFiles}
+                      onFilesChange={setAttachedFiles}
+                      maxFiles={3}
+                      acceptedTypes=".pdf,.doc,.docx,.txt,.jpg,.png"
+                      className="mt-4"
                     />
                   </div>
 
                   <button
                     disabled={formState === 'sending'}
                     type="submit"
-                    className={`w-full py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all flex items-center justify-center gap-3 ${isDark ? 'bg-white text-black hover:bg-[#CCFF00]' : 'bg-black text-white hover:bg-[#CCFF00] hover:text-black'
+                    aria-label={formState === 'sending' ? 'Envoi du message en cours' : 'Envoyer le message'}
+                    className={`w-full py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all flex items-center justify-center gap-3 focus-visible:outline-2 focus-visible:outline-[#CCFF00] disabled:opacity-50 disabled:cursor-not-allowed ${isDark ? 'bg-white text-black hover:bg-[#CCFF00]' : 'bg-black text-white hover:bg-[#CCFF00] hover:text-black'
                       }`}
                   >
                     {formState === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}

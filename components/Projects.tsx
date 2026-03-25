@@ -4,30 +4,9 @@ import { motion, AnimatePresence, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
 import OptimizedImage from './OptimizedImage';
+import { getAllProjects } from '../data/projects';
 
-const projects = [
-  {
-    id: 'sap-station',
-    title: 'SAP STATION MANAGER',
-    category: 'Digitalisation / B2B',
-    description: 'Gestion digitale des franchises de stations-service au Sénégal',
-    img: '/gallerie/photos/sap-preview.png'
-  },
-  {
-    id: 'ecomed24',
-    title: 'ECOMED24 PLATFORM',
-    category: 'Santé Numérique / B2B',
-    description: 'Écosystème de santé numérique pour l\'Afrique',
-    img: '/gallerie/photos/ecomed_preview.png'
-  },
-  {
-    id: 'restaurant-manager',
-    title: 'RESTAURANT MANAGER',
-    category: 'Gestion / B2B',
-    description: 'Solution complète de gestion pour restaurants et chaînes',
-    img: '/gallerie/photos/restaurant_preview.png'
-  },
-];
+const projects = getAllProjects();
 
 export const Projects: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);

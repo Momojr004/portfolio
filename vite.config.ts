@@ -8,6 +8,8 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       host: '0.0.0.0',
+      // SPA history API fallback pour BrowserRouter
+      historyApiFallback: true,
     },
     plugins: [react()],
     resolve: {

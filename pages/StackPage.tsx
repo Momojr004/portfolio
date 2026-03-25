@@ -3,7 +3,9 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeContext } from '../App';
 import { TiltCard } from '../components/TiltCard';
+import TechIcon from '../components/TechIcon';
 import { Layers, Code2, Cpu, Globe, Rocket, Terminal, Database, ShieldCheck } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const techGroups = [
   {
@@ -104,10 +106,11 @@ const StackPage: React.FC = () => {
           >
             {[...secondaryIcons, ...secondaryIcons, ...secondaryIcons].map((icon, i) => (
               <div key={i} className="flex items-center gap-4 group">
-                <img
-                  src={`https://cdn.simpleicons.org/${icon.toLowerCase()}/${isDark ? '666666' : '333333'}`}
-                  alt={icon}
-                  className="w-6 h-6 grayscale group-hover:grayscale-0 transition-all duration-300"
+                <TechIcon
+                  name={icon}
+                  fallbackUrl={`https://cdn.simpleicons.org/${icon.toLowerCase()}/${isDark ? '666666' : '333333'}`}
+                  size={24}
+                  className="grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
                 <span className="text-sm font-bold uppercase tracking-[0.3em] opacity-30 group-hover:opacity-100 group-hover:text-[#CCFF00] transition-all">
                   {icon}
@@ -143,10 +146,11 @@ const StackPage: React.FC = () => {
                         : 'border-zinc-200 bg-zinc-50 text-zinc-600 hover:text-black'
                         }`}
                     >
-                      <img
-                        src={tech.logo}
-                        alt={tech.name}
-                        className={`w-4 h-4 ${tech.name === 'shadcn/ui' || tech.name === 'Eloquent ORM' || tech.name === 'Laravel Sanctum' || tech.name === 'Express.js' || tech.name === 'JWT' ? 'invert opacity-80' : ''}`}
+                      <TechIcon
+                        name={tech.name}
+                        fallbackUrl={tech.logo}
+                        size={16}
+                        className={`transition-all duration-300 group-hover:scale-110 ${tech.name === 'shadcn/ui' || tech.name === 'Eloquent ORM' || tech.name === 'Laravel Sanctum' || tech.name === 'Express.js' || tech.name === 'JWT' ? 'invert opacity-80' : ''}`}
                       />
                       {tech.name}
                     </motion.span>
