@@ -20,9 +20,10 @@ const ProjectDetails: React.FC = () => {
       stack: ['Laravel', 'React', 'MySQL', 'Tailwind CSS', 'AWS'],
       desc: 'Digitalisation complète du processus de gestion d\'une franchise de station-service basée au Sénégal. Interface de gestion des ventes, stocks, employés et rapports financiers.',
       solution: 'Architecture React modulaire avec API Laravel pour gérer les opérations quotidiennes : ventes de carburant, gestion des stocks, suivi des employés, et génération de rapports en temps réel.',
-      video: './gallerie/vidéos/sap-demo.mp4',
+      video: '/gallerie/vidéos/sap-demo.mp4',
+      liveUrl: 'https://sap-station-demo.mohamedpouye.dev',
       features: ['Gestion des ventes', 'Suivi des stocks', 'Tableau de bord admin', 'Rapports financiers'],
-      galleryImages: ['./gallerie/photos/sap_001.png', './gallerie/photos/sap_002.png']
+      galleryImages: ['/gallerie/photos/sap_001.png', '/gallerie/photos/sap_002.png']
     },
     'ecomed24': {
       title: 'ECOMED24 PLATFORM',
@@ -32,9 +33,10 @@ const ProjectDetails: React.FC = () => {
       stack: ['Node.js', 'React', 'MySQL', 'AWS'],
       desc: 'Écosystème de santé numérique multidisciplinaire pour les professionnels de santé en Afrique.',
       solution: 'Plateforme intégrée avec téléconsultation, gestion des dossiers patients, collaboration entre professionnels et digitalisation des flux financiers.',
-      video: './gallerie/vidéos/demo_ecomed24.mp4',
+      video: '/gallerie/vidéos/demo_ecomed24.mp4',
+      liveUrl: 'https://ecomed24.com',
       features: ['Téléconsultation', 'Dossiers patients', 'Collaboration médicale', 'Flux financiers'],
-      galleryImages: ['./gallerie/photos/ecomed_001.png', './gallerie/photos/ecomed_002.png']
+      galleryImages: ['/gallerie/photos/ecomed_001.png', '/gallerie/photos/ecomed_002.png']
     },
     'restaurant-manager': {
       title: 'RESTAURANT MANAGER',
@@ -44,9 +46,10 @@ const ProjectDetails: React.FC = () => {
       stack: ['Flutter', 'NestJS', 'PostgreSQL', 'MongoDB'],
       desc: 'Application complète de gestion pour restaurants avec interface de supervision pour propriétaires et console admin.',
       solution: 'Architecture hybride avec base de données mixte, gestion des abonnements, et tableau de bord multi-niveaux pour gérants et propriétaires.',
-      video: './gallerie/vidéos/demo_restaurant.mp4',
+      video: '/gallerie/vidéos/demo_restaurant.mp4',
+      liveUrl: 'https://restaurant-manager-demo.mohamedpouye.dev',
       features: ['Gestion commandes', 'Supervision multi-restaurants', 'Console admin', 'Gestion abonnements'],
-      galleryImages: ['./gallerie/photos/restau_001.png', './gallerie/photos/restau_002.png']
+      galleryImages: ['/gallerie/photos/restau_001.png', '/gallerie/photos/restau_002.png']
     },
     'khayroukoum': {
       title: 'KHAYROUKOUM',
@@ -56,9 +59,10 @@ const ProjectDetails: React.FC = () => {
       stack: ['Laravel', 'React', 'TypeScript', 'Tailwind CSS', 'SQLite/MySQL'],
       desc: 'Plateforme web complète dédiée à la gestion des projets d\'accès à l\'eau potable en milieu rural.',
       solution: 'Architecture MVC moderne avec Laravel 12 et React 18.3, utilisant Eloquent ORM et Laravel Sanctum pour l\'authentification. Interface construite avec shadcn/ui et TanStack Query pour une gestion d\'état optimisée.',
-      video: './gallerie/vidéos/demo_khayroukoum.mp4',
+      video: '/gallerie/vidéos/demo_khayroukoum.mp4',
+      liveUrl: 'https://khayroukoum.org',
       features: ['Gestion projets hydrauliques', 'Suivi financements', 'Rôles avancés', 'API REST documentée'],
-      galleryImages: ['./gallerie/photos/khayroukoum001.png', './gallerie/photos/khayroukoum002.png']
+      galleryImages: ['/gallerie/photos/khayroukoum001.png', '/gallerie/photos/khayroukoum002.png']
     }
   };
 
@@ -108,6 +112,7 @@ const ProjectDetails: React.FC = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           controls={false}
           className="w-full h-full object-contain opacity-90"
           onError={(e) => {
@@ -198,13 +203,16 @@ const ProjectDetails: React.FC = () => {
             </ul>
           </motion.div>
 
-          <motion.button
+          <motion.a
+            href={project.liveUrl || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 px-8 py-4 bg-[#CCFF00] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(204,255,0,0.3)] transition-all"
+            className="flex items-center gap-3 px-8 py-4 bg-[#CCFF00] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(204,255,0,0.3)] transition-all cursor-pointer"
           >
             Voir le Live <ExternalLink size={14} />
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Content Area */}

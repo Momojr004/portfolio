@@ -3,6 +3,7 @@ import React, { useState, useContext, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../App';
+import OptimizedImage from './OptimizedImage';
 
 const projects = [
   {
@@ -10,21 +11,21 @@ const projects = [
     title: 'SAP STATION MANAGER',
     category: 'Digitalisation / B2B',
     description: 'Gestion digitale des franchises de stations-service au Sénégal',
-    img: './gallerie/photos/sap-préview.png'
+    img: '/gallerie/photos/sap-preview.png'
   },
   {
     id: 'ecomed24',
     title: 'ECOMED24 PLATFORM',
     category: 'Santé Numérique / B2B',
     description: 'Écosystème de santé numérique pour l\'Afrique',
-    img: './gallerie/photos/ecomed_preview.png'
+    img: '/gallerie/photos/ecomed_preview.png'
   },
   {
     id: 'restaurant-manager',
     title: 'RESTAURANT MANAGER',
     category: 'Gestion / B2B',
     description: 'Solution complète de gestion pour restaurants et chaînes',
-    img: './gallerie/photos/restaurant_preview.png'
+    img: '/gallerie/photos/restaurant_preview.png'
   },
 ];
 
@@ -74,10 +75,13 @@ export const Projects: React.FC = () => {
               }}
               className="shadow-2xl border-4 border-[#CCFF00]/20"
             >
-              <img
+              <OptimizedImage
                 src={projects[hoveredProject].img}
                 alt="Preview"
                 className="w-full h-full object-cover"
+                width={400}
+                height={280}
+                priority={true}
               />
             </motion.div>
           )}

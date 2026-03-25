@@ -2,6 +2,7 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -71,9 +72,11 @@ const Layout = () => {
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
-      <Layout />
-    </HashRouter>
+    <HelmetProvider>
+      <HashRouter>
+        <Layout />
+      </HashRouter>
+    </HelmetProvider>
   );
 };
 

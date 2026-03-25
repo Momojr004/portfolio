@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* Custom styles */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.theme-dark {
+    background-color: #0B0B0B;
+    color: #FFFFFF;
+}
+
+.theme-light {
+    background-color: #F5F5F0;
+    color: #1A1A1A;
+}
+
+::selection {
+    background-color: #CCFF00;
+    color: #0B0B0B;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CCFF00;
+    border-radius: 10px;
+}
+
+/* Animation pour le bruit */
+@keyframes noise {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+
+    10% {
+        transform: translateX(-2px) translateY(-2px);
+    }
+
+    20% {
+        transform: translateX(-4px) translateY(2px);
+    }
+
+    30% {
+        transform: translateX(2px) translateY(-4px);
+    }
+
+    40% {
+        transform: translateX(-2px) translateY(6px);
+    }
+
+    50% {
+        transform: translateX(-4px) translateY(2px);
+    }
+
+    60% {
+        transform: translateX(6px) translateY(0px);
+    }
+
+    70% {
+        transform: translateX(0px) translateY(6px);
+    }
+
+    80% {
+        transform: translateX(-6px) translateY(4px);
+    }
+
+    90% {
+        transform: translateX(4px) translateY(2px);
+    }
+
+    100% {
+        transform: translateX(2px) translateY(0px);
+    }
+}
+
+::selection {
+    background-color: #CCFF00;
+    color: #0B0B0B;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CCFF00;
+    border-radius: 10px;
+}
+
+/* Animation pour le bruit */
+@keyframes noise {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+
+    10% {
+        transform: translateX(-2px) translateY(-2px);
+    }
+
+    20% {
+        transform: translateX(-4px) translateY(2px);
+    }
+
+    30% {
+        transform: translateX(2px) translateY(-4px);
+    }
+
+    40% {
+        transform: translateX(-2px) translateY(6px);
+    }
+
+    50% {
+        transform: translateX(-4px) translateY(2px);
+    }
+
+    60% {
+        transform: translateX(6px) translateY(0px);
+    }
+
+    70% {
+        transform: translateX(0px) translateY(6px);
+    }
+
+    80% {
+        transform: translateX(-6px) translateY(4px);
+    }
+
+    90% {
+        transform: translateX(4px) translateY(2px);
+    }
+
+    100% {
+        transform: translateX(2px) translateY(0px);
+    }
+}

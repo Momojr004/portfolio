@@ -1,5 +1,5 @@
 
-import React, { useRef, Suspense } from 'react';
+import React, { useRef, Suspense, useMemo } from 'react';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import {
   Float,
@@ -11,6 +11,13 @@ import {
   useTexture
 } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Détection mobile pour optimiser les performances
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    window.innerWidth < 768;
+};
 
 // Fix: Correctly define the Three.js elements in the React JSX namespace
 declare global {
@@ -43,7 +50,7 @@ declare module 'react' {
 const InnerPortrait = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   // Utilise la vraie photo de Mouhamed depuis le dossier gallerie
-  const texture = useTexture('./gallerie/photos/profil.jpeg');
+  const texture = useTexture('/gallerie/photos/profil.jpeg');
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -84,21 +91,21 @@ const VisionarySphere = () => {
           <InnerPortrait />
         </Suspense>
 
-        <Sphere ref={shellRef} args={[1.9, 64, 64]}>
+        <Sphere ref={shellRef} args={[1.9, isMobile() ? 32 : 64, isMobile() ? 32 : 64]}>
           <MeshTransmissionMaterial
             backside
-            samples={16}
-            resolution={512}
+            samples={isMobile() ? 4 : 16}
+            resolution={isMobile() ? 256 : 512}
             transmission={1.0}
             roughness={0.0}
             thickness={2.0}
             ior={1.1}
-            chromaticAberration={0.03}
+            chromaticAberration={isMobile() ? 0.01 : 0.03}
             anisotropy={0.1}
             distortion={0.1}
             distortionScale={0.2}
             temporalDistortion={0.0}
-            color="#ffffff" // Verre blanc pur pour la clarté
+            color="#ffffff"
             attenuationDistance={2}
             attenuationColor="#ffffff"
             transparent
@@ -112,7 +119,7 @@ const VisionarySphere = () => {
 export const Experience3D: React.FC = () => {
   return (
     <div className="w-full h-full cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={[1, 2]} gl={{ alpha: true, antialias: true }}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={isMobile() ? [1, 1.5] : [1, 2]} gl={{ alpha: true, antialias: !isMobile(), powerPreference: "high-performance" }}>
         <Suspense fallback={null}>
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} intensity={2.5} color="#CCFF00" />

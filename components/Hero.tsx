@@ -46,11 +46,16 @@ export const Hero: React.FC = () => {
             className={`text-4xl sm:text-5xl lg:text-[4rem] xl:text-[5rem] font-[900] leading-[0.8] tracking-[-0.04em] mb-8 ${isDark ? 'text-white' : 'text-zinc-800'}`}
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Developpeur <br />
-            <span className="text-[#CCFF00]">FULL-STACK</span> &<br />
-
-            <span className="italic"> ENTREPRENEUR TECH</span>
+            JE PARLE BUSINESS<br />
+            <span className="text-[#CCFF00]">AVANT DE PARLER</span><br />
+            <span className="italic">CODE.</span>
           </motion.h1>
+          <motion.p
+            variants={item}
+            className={`text-xl md:text-2xl max-w-xl font-[600] leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}
+          >
+            Développeur Full-Stack & Entrepreneur Tech
+          </motion.p>
           <motion.p
             variants={item}
             className={`text-2xl sm:text-3xl lg:text-[2rem] max-w-xl font-[800] leading-relaxed ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}
