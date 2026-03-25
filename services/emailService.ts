@@ -12,7 +12,6 @@ export interface ContactFormData {
     fullName: string;
     email: string;
     message: string;
-    attachments?: File[];
 }
 
 // Interface pour la réponse
@@ -54,19 +53,7 @@ class EmailService {
     async sendContactForm(formData: ContactFormData): Promise<EmailResponse> {
         // Si EmailJS n'est pas configuré, simuler l'envoi
         if (!this.isConfigured) {
-            console.log('📧 Mode SIMULATION - Email qui serait envoyé:');
-            console.log('👤 Nom:', formData.fullName);
-            console.log('📮 Email:', formData.email);
-            console.log('💬 Message:', formData.message);
 
-            if (formData.attachments && formData.attachments.length > 0) {
-                console.log('📎 Fichiers attachés:');
-                formData.attachments.forEach((file, index) => {
-                    console.log(`  ${index + 1}. ${file.name} (${(file.size / 1024).toFixed(2)} KB)`);
-                });
-            }
-
-            console.log('🔑 Pour activer l\'envoi réel: ajoutez vos clés EmailJS dans .env.local');
 
             // Simulation d'un délai réseau
             await new Promise(resolve => setTimeout(resolve, 1500));
@@ -83,61 +70,68 @@ class EmailService {
                 from_name: formData.fullName,
                 from_email: formData.email,
                 message: formData.message,
-                to_email: 'guilganee@gmail.com', // Email de réception
+                to_email: 'guilganee@gmail.com', // Email de réception - VÉRIFIER QUE C'EST CORRECT !
                 sent_at: new Date().toLocaleString('fr-FR'),
                 site_url: import.meta.env.VITE_SITE_URL || 'http://localhost:3005'
             };
 
-            // Gestion des fichiers attachés (EmailJS supporte les attachments)
-            if (formData.attachments && formData.attachments.length > 0) {
-                formData.attachments.forEach((file, index) => {
-                    templateParams[`attachment_${index + 1}`] = file;
-                });
+            // Tentative d'envoi avec EmailJS et retry automatique
+            let lastError;
+            const maxRetries = 2;
 
-                templateParams.has_attachments = 'true';
-                templateParams.attachments_count = formData.attachments.length;
-                templateParams.attachments_list = formData.attachments
-                    .map((file, index) => `${index + 1}. ${file.name} (${(file.size / 1024).toFixed(2)} KB)`)
-                    .join('\n');
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+
+                    const response = await emailjs.send(
+                        EMAILJS_CONFIG.serviceId,
+                        EMAILJS_CONFIG.templateId,
+                        templateParams
+                    );
+
+                    // Vérifications du statut de réponse
+                    if (response.status === 200 || response.text === 'OK') {
+
+                        return {
+                            success: true,
+                            message: 'Message envoyé avec succès ! Je vous répondrai dans les 24h.'
+                        };
+                    } else {
+                        console.warn(`⚠️ EmailJS Response douteuse (tentative ${attempt}):`, response);
+                        lastError = new Error(`Réponse inattendue: ${response.status}`);
+                    }
+
+                } catch (error: any) {
+                    lastError = error;
+                    console.error(`❌ EmailJS Erreur (tentative ${attempt}):`, {
+                        message: error.message,
+                        status: error.status,
+                        text: error.text,
+                        attempt: attempt
+                    });
+
+                    // Attendre avant retry (sauf dernière tentative)
+                    if (attempt < maxRetries) {
+                        await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+                    }
+                }
             }
 
-            const response = await emailjs.send(
-                EMAILJS_CONFIG.serviceId,
-                EMAILJS_CONFIG.templateId,
-                templateParams
-            );
-
-            console.log('✅ EmailJS Success:', response);
-
-            return {
-                success: true,
-                message: 'Message envoyé avec succès ! Je vous répondrai dans les 24h.'
-            };
-
-        } catch (error) {
-            console.error('❌ EmailJS Error:', error);
+            // Si toutes les tentatives ont échoué
+            console.error('❌ EmailJS: Toutes les tentatives ont échoué:', lastError);
 
             return {
                 success: false,
-                message: 'Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement.',
-                error
+                message: 'Erreur lors de l\'envoi après plusieurs tentatives. Veuillez réessayer ou me contacter directement.',
+                error: lastError
             };
-        }
-    }
-
-    // Helper pour vérifier le statut de la configuration
-    getConfigurationStatus(): { configured: boolean; message: string } {
-        if (this.isConfigured) {
+        } catch (error: any) {
+            console.error('❌ Erreur générale EmailJS:', error);
             return {
-                configured: true,
-                message: 'EmailJS configuré et prêt'
+                success: false,
+                message: 'Erreur technique inattendue. Veuillez réessayer plus tard.',
+                error: error
             };
         }
-
-        return {
-            configured: false,
-            message: 'EmailJS en mode simulation. Configurez les variables d\'environnement pour l\'envoi réel.'
-        };
     }
 }
 

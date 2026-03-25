@@ -17,11 +17,6 @@ export const sendWeb3Form = async (data: Web3FormData): Promise<Web3FormResponse
     // Configuration temporaire - à remplacer par vraie clé
     if (WEB3FORMS_ACCESS_KEY === "YOUR_WEB3FORMS_ACCESS_KEY") {
         // Simulation pour développement
-        console.log('🚀 Web3Forms Simulation Mode Active');
-        console.log('📧 Email simulé envoyé avec les données:', {
-            ...data,
-            timestamp: new Date().toLocaleString('fr-FR'),
-        });
 
         // Simuler un délai réseau
         await new Promise(resolve => setTimeout(resolve, 1000));

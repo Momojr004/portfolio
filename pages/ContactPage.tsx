@@ -6,17 +6,11 @@ import { Mail, MapPin, Clock, ArrowRight, Send } from 'lucide-react';
 import SEO from '../components/SEO';
 import { TiltCard } from '../components/TiltCard';
 import emailService, { ContactFormData } from '../services/emailService';
-import { sendWeb3Form } from '../services/web3FormService';
-import FileUpload from '../components/FileUpload';
 
 const ContactPage: React.FC = () => {
   const { isDark } = useContext(ThemeContext);
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
-
-  // Vérifier si EmailJS est configuré
-  const emailJSStatus = emailService.getConfigurationStatus();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,35 +23,19 @@ const ContactPage: React.FC = () => {
       fullName: formData.get('fullName') as string,
       email: formData.get('email') as string,
       message: formData.get('message') as string,
-      attachments: attachedFiles.length > 0 ? attachedFiles : undefined,
     };
 
     try {
-      // FALLBACK : Web3Forms si EmailJS échoue (pendant config Gmail)
-      const web3Result = await sendWeb3Form({
-        name: contactData.fullName,
-        email: contactData.email,
-        message: contactData.message
-      });
-
-      if (web3Result.success) {
-        setFormState('success');
-        (e.target as HTMLFormElement).reset();
-        setAttachedFiles([]); // Réinitialiser les fichiers
-        return;
-      }
-
-      // Sinon essayer EmailJS (si configuré)
       const result = await emailService.sendContactForm(contactData);
 
       if (result.success) {
         setFormState('success');
         (e.target as HTMLFormElement).reset();
-        setAttachedFiles([]); // Réinitialiser les fichiers
-      } else {
-        setFormState('error');
-        setErrorMessage(result.message);
+        return;
       }
+
+      setFormState('error');
+      setErrorMessage('Échec de l\'envoi. Veuillez réessayer ou me contacter directement par email.');
     } catch (error) {
       console.error('Contact form error:', error);
       setFormState('error');
@@ -128,18 +106,6 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Right Column: Form */}
-          {/* Bandeau dev - statut EmailJS */}
-          {import.meta.env.DEV && (
-            <div className={`mb-4 p-3 rounded-lg text-xs ${emailJSStatus.configured
-                ? 'bg-green-500/10 text-green-400 border border-green-500/20'
-                : 'bg-orange-500/10 text-orange-400 border border-orange-500/20'
-              }`}>
-              <div className="flex items-center gap-2">
-                <span className={`w-2 h-2 rounded-full ${emailJSStatus.configured ? 'bg-green-400' : 'bg-orange-400'}`}></span>
-                <span className="font-mono">{emailJSStatus.message}</span>
-              </div>
-            </div>
-          )}
 
           <div className="relative">
             <TiltCard className={`p-8 md:p-12 rounded-[3rem] border-2 transition-colors relative ${isDark ? 'bg-zinc-900/40 border-zinc-800/50' : 'bg-white border-zinc-100'
@@ -226,18 +192,6 @@ const ContactPage: React.FC = () => {
                       aria-describedby="message-error"
                       className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl resize-none focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
-                    />
-                  </div>
-
-                  {/* Upload de fichiers */}
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Documents joints (optionnel)</label>
-                    <FileUpload
-                      files={attachedFiles}
-                      onFilesChange={setAttachedFiles}
-                      maxFiles={3}
-                      acceptedTypes=".pdf,.doc,.docx,.txt,.jpg,.png"
-                      className="mt-4"
                     />
                   </div>
 
