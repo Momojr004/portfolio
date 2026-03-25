@@ -23,7 +23,9 @@ export const Footer: React.FC = () => {
           }`}>
           <div className="text-left">
             <p className="text-zinc-500 uppercase tracking-widest font-bold text-xs mb-4">Contact</p>
-            <a href="mailto:guilganee@gmail.com" className="text-2xl font-black hover:text-[#CCFF00] transition-colors">guilganee@gmail.com</a>
+            <a href="mailto:momo@terangadev.com" className="text-2xl font-black hover:text-[#CCFF00] transition-colors">momo@terangadev.com</a>
+            <br />
+            <a href="mailto:guilganee@gmail.com" className="text-sm font-bold text-zinc-500 hover:text-current transition-colors mt-1 inline-block">guilganee@gmail.com</a>
           </div>
 
           <div className="flex gap-8">

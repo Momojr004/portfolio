@@ -30,15 +30,21 @@ export const Navbar: React.FC = () => {
 
         <div className="flex items-center gap-6 md:gap-12">
           <div className="flex gap-4 md:gap-8" role="navigation" aria-label="Navigation principale">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.path}
-                className={`nav-link text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-[#CCFF00] focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'text-white' : 'text-zinc-900'}`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className={`nav-link text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-[#CCFF00] focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isActive ? 'text-[#CCFF00]' : isDark ? 'text-white' : 'text-zinc-900'}`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="block h-[2px] bg-[#CCFF00] mt-1 rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-4">

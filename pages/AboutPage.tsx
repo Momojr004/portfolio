@@ -214,14 +214,14 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.6 }}
               whileHover={{ scale: 1.02 }}
-              onClick={() => window.location.href = 'mailto:guilganee@gmail.com'}
+              onClick={() => window.location.href = 'mailto:momo@terangadev.com'}
             >
               <h3 className="text-xs font-[900] uppercase opacity-60 mb-4 tracking-[0.3em]">Ready to Build?</h3>
               <p className="text-2xl font-[900] tracking-tight leading-tight">
                 LET'S TALK <span className="italic">BUSINESS</span>
               </p>
               <p className="text-sm font-bold opacity-60 mt-2 group-hover:opacity-100 transition-opacity">
-                → guilganee@gmail.com
+                → momo@terangadev.com
               </p>
             </motion.div>
           </div>

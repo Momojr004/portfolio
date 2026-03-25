@@ -63,7 +63,7 @@ const WorkPage: React.FC = () => {
                     src={project.video}
                     autoPlay={true}
                     className="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out transform-gpu"
-                    poster={`${project.video.replace('.mp4', '-poster.jpg')}`}
+                    poster={project.img}
                   />
 
                   {/* Badge catégorie flottant */}

@@ -99,7 +99,7 @@ const SEO: React.FC<SEOProps> = ({
                         "Full-Stack Development",
                         "Web Development"
                     ],
-                    "email": "guilganee@gmail.com"
+                    "email": ["momo@terangadev.com", "guilganee@gmail.com"]
                 })}
             </script>
         </Helmet>

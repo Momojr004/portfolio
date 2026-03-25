@@ -13,6 +13,7 @@ export interface WorkProject {
     category: string;
     description: string;
     video: string;
+    img: string;
 }
 
 export interface ProjectDetails extends Project {
@@ -149,6 +150,7 @@ export const getWorkProjects = (): WorkProject[] => {
         title: project.title,
         category: project.category,
         description: project.description,
-        video: project.video
+        video: project.video,
+        img: project.img
     }));
 };

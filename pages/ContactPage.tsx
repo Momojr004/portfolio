@@ -81,9 +81,12 @@ const ContactPage: React.FC = () => {
                 </p>
 
                 <div className="space-y-4">
-                  <a href="mailto:guilganee@gmail.com" className="group flex items-center gap-4 text-2xl md:text-3xl font-black hover:text-[#CCFF00] transition-colors">
-                    guilganee@gmail.com
+                  <a href="mailto:momo@terangadev.com" className="group flex items-center gap-4 text-2xl md:text-3xl font-black hover:text-[#CCFF00] transition-colors">
+                    momo@terangadev.com
                     <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                  </a>
+                  <a href="mailto:guilganee@gmail.com" className={`group flex items-center gap-3 text-lg font-bold transition-colors ${isDark ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600'}`}>
+                    guilganee@gmail.com
                   </a>
                 </div>
               </motion.div>
@@ -160,7 +163,7 @@ const ContactPage: React.FC = () => {
                       name="fullName"
                       required
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Amadou Diallo"
                       aria-describedby="fullName-error"
                       className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
@@ -174,7 +177,7 @@ const ContactPage: React.FC = () => {
                       name="email"
                       required
                       type="email"
-                      placeholder="john@company.com"
+                      placeholder="amadou@entreprise.sn"
                       aria-describedby="email-error"
                       className={`w-full bg-transparent border-b-2 py-4 outline-none transition-colors font-bold text-xl focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 focus:border-[#CCFF00]' : 'border-zinc-100 focus:border-black'
                         }`}
