@@ -48,7 +48,7 @@ const ProjectDetails: React.FC = () => {
         <button
           onClick={handleBack}
           aria-label="Retourner à la page précédente"
-          className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs hover:text-[#CCFF00] transition-all cursor-pointer group focus-visible:outline-2 focus-visible:outline-[#CCFF00]"
+          className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs hover:text-[#F5B731] transition-all cursor-pointer group focus-visible:outline-2 focus-visible:outline-[#F5B731]"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Projects
         </button>
@@ -89,7 +89,7 @@ const ProjectDetails: React.FC = () => {
         <div className="fallback-content absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <p className="text-zinc-400 mb-4">Aperçu du projet</p>
-            <div className="w-32 h-32 bg-[#CCFF00] rounded-2xl flex items-center justify-center">
+            <div className="w-32 h-32 bg-[#F5B731] rounded-2xl flex items-center justify-center">
               <span className="text-black font-black text-4xl">{project.title.charAt(0)}</span>
             </div>
           </div>
@@ -117,7 +117,7 @@ const ProjectDetails: React.FC = () => {
             transition={{ delay: 0.05 }}
           >
             <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}>Mon Rôle</h4>
-            <p className="text-lg font-bold text-[#CCFF00]">{project.role}</p>
+            <p className="text-lg font-bold text-[#F5B731]">{project.role}</p>
           </motion.div>
 
           <motion.div
@@ -146,7 +146,7 @@ const ProjectDetails: React.FC = () => {
             <ul className="space-y-2">
               {project.features.map((feature: string) => (
                 <li key={feature} className={`flex items-center gap-2 text-sm ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
-                  <span className="w-1.5 h-1.5 bg-[#CCFF00] rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-[#F5B731] rounded-full"></span>
                   {feature}
                 </li>
               ))}
@@ -159,7 +159,7 @@ const ProjectDetails: React.FC = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 px-8 py-4 bg-[#CCFF00] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(204,255,0,0.3)] transition-all cursor-pointer"
+            className="flex items-center gap-3 px-8 py-4 bg-[#F5B731] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(245,183,49,0.3)] transition-all cursor-pointer"
           >
             Voir le Live <ExternalLink size={14} />
           </motion.a>

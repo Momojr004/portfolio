@@ -52,7 +52,7 @@ export const Projects: React.FC = () => {
                 overflow: 'hidden',
                 borderRadius: '24px'
               }}
-              className="shadow-2xl border-4 border-[#CCFF00]/20"
+              className="shadow-2xl border-4 border-[#F5B731]/20"
             >
               <OptimizedImage
                 src={projects[hoveredProject].img}
@@ -77,7 +77,7 @@ export const Projects: React.FC = () => {
             >
               <div className="z-10 transition-transform duration-700 group-hover:translate-x-12">
                 <p className="text-xs font-bold text-zinc-500 mb-2 uppercase tracking-widest">{project.category}</p>
-                <h3 className={`text-5xl md:text-8xl font-black transition-colors duration-300 ${isDark ? 'text-white group-hover:text-[#CCFF00]' : 'text-zinc-900 group-hover:text-[#CCFF00]'
+                <h3 className={`text-5xl md:text-8xl font-black transition-colors duration-300 ${isDark ? 'text-white group-hover:text-[#F5B731]' : 'text-zinc-900 group-hover:text-[#F5B731]'
                   }`}>
                   {project.title}
                 </h3>

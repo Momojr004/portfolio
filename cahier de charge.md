@@ -19,7 +19,7 @@ Atmosphère : Premium, Sérieuse, mais "Smooth".
 B. Palette de Couleurs & Thèmes
 Le site possède deux modes distincts avec un accent commun.
 
-Accent Color (La Marque) : #CCFF00 (Vert Acide / Lime Digital).
+Accent Color (La Marque) : #F5B731 (Teranga Gold / Or Solaire).
 
 Dark Mode (Défaut) :
 

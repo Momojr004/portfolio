@@ -11,7 +11,7 @@ export const CustomCursor: React.FC = () => {
     if (cursorRef.current) {
       const offset = isHoveringRef.current ? 20 : 16;
       cursorRef.current.style.transform = `translate3d(${posRef.current.x - offset}px, ${posRef.current.y - offset}px, 0) scale(${isHoveringRef.current ? 2.5 : 1})`;
-      cursorRef.current.style.backgroundColor = isHoveringRef.current ? '#CCFF00' : '#FFFFFF';
+      cursorRef.current.style.backgroundColor = isHoveringRef.current ? '#F5B731' : '#FFFFFF';
     }
   }, []);
 

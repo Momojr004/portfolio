@@ -74,7 +74,7 @@ const Home: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className={`p-8 rounded-[2rem] border transition-all hover:border-[#CCFF00] group ${isDark ? 'bg-black border-zinc-800' : 'bg-white border-zinc-200'}`}
+                className={`p-8 rounded-[2rem] border transition-all hover:border-[#F5B731] group ${isDark ? 'bg-black border-zinc-800' : 'bg-white border-zinc-200'}`}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-20 h-20 bg-[#191A21] rounded-xl flex items-center justify-center overflow-hidden">
@@ -93,14 +93,14 @@ const Home: React.FC = () => {
                   </div>
                 </div>
                 <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
-                  Digitalisation des PME africaines. Nous remplaçons les solutions archaïques (Excel, bloc-notes) par des <strong className="text-[#CCFF00]">SaaS modernes</strong> et développons des systèmes sur-mesure.
+                  Digitalisation des PME africaines. Nous remplaçons les solutions archaïques (Excel, bloc-notes) par des <strong className="text-[#F5B731]">SaaS modernes</strong> et développons des systèmes sur-mesure.
                 </p>
                 <div className="mt-6">
                   <a
                     href="https://terangadev.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#CCFF00] font-bold text-sm hover:underline transition-all group-hover:translate-x-1"
+                    className="text-[#F5B731] font-bold text-sm hover:underline transition-all group-hover:translate-x-1"
                   >
                     → Découvrir TerangaDev
                   </a>
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className={`p-8 rounded-[2rem] border transition-all hover:border-[#CCFF00] group ${isDark ? 'bg-black border-zinc-800' : 'bg-white border-zinc-200'}`}
+                className={`p-8 rounded-[2rem] border transition-all hover:border-[#F5B731] group ${isDark ? 'bg-black border-zinc-800' : 'bg-white border-zinc-200'}`}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-20 h-20 bg-[#fff] rounded-xl flex items-center justify-center overflow-hidden">
@@ -132,14 +132,14 @@ const Home: React.FC = () => {
                   </div>
                 </div>
                 <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
-                  Écosystème de <strong className="text-[#CCFF00]">santé numérique</strong> pour l'Afrique. Téléconsultation, gestion patients, collaboration médicale et digitalisation des flux financiers.
+                  Écosystème de <strong className="text-[#F5B731]">santé numérique</strong> pour l'Afrique. Téléconsultation, gestion patients, collaboration médicale et digitalisation des flux financiers.
                 </p>
                 <div className="mt-6">
                   <a
                     href="https://www.ecomed24.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#CCFF00] font-bold text-sm hover:underline transition-all group-hover:translate-x-1"
+                    className="text-[#F5B731] font-bold text-sm hover:underline transition-all group-hover:translate-x-1"
                   >
                     → Découvrir EcoMed24
                   </a>
@@ -158,11 +158,11 @@ const Home: React.FC = () => {
                 key={i}
                 whileHover={{ y: -8 }}
                 className={`p-10 rounded-3xl border-2 transition-all duration-300 transform-gpu cursor-default ${isDark
-                  ? 'bg-zinc-900/30 border-zinc-800/50 hover:border-[#CCFF00]'
-                  : 'bg-white border-zinc-100 hover:border-[#CCFF00] shadow-xl shadow-black/5'
+                  ? 'bg-zinc-900/30 border-zinc-800/50 hover:border-[#F5B731]'
+                  : 'bg-white border-zinc-100 hover:border-[#F5B731] shadow-xl shadow-black/5'
                   }`}
               >
-                <div className="text-[#CCFF00] mb-6 transition-transform group-hover:scale-110">{s.icon}</div>
+                <div className="text-[#F5B731] mb-6 transition-transform group-hover:scale-110">{s.icon}</div>
                 <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{s.title}</h3>
                 <p className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>{s.desc}</p>
               </motion.div>
@@ -173,7 +173,7 @@ const Home: React.FC = () => {
         <Projects />
 
         {/* Process Section */}
-        <section ref={processRef} className="py-32 px-6 md:px-20 bg-[#CCFF00] text-black relative overflow-hidden">
+        <section ref={processRef} className="py-32 px-6 md:px-20 bg-[#F5B731] text-black relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 relative z-10">
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">MON <br />PROCESS.</h2>
             <div className="space-y-12 relative">
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
                   transition={{ delay: idx * 0.2 }}
                   className="flex gap-8 border-b border-black/10 pb-8 relative"
                 >
-                  <span className="text-2xl font-black bg-[#CCFF00] z-20 h-fit pr-4">{step.n}</span>
+                  <span className="text-2xl font-black bg-[#F5B731] z-20 h-fit pr-4">{step.n}</span>
                   <div>
                     <h4 className="text-3xl font-bold mb-2">{step.t}</h4>
                     <p className="font-medium opacity-60 text-lg">{step.d}</p>

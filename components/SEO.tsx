@@ -69,8 +69,8 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:creator" content="@guilganee" />
 
             {/* Additional SEO Tags */}
-            <meta name="theme-color" content="#CCFF00" />
-            <meta name="msapplication-TileColor" content="#CCFF00" />
+            <meta name="theme-color" content="#F5B731" />
+            <meta name="msapplication-TileColor" content="#F5B731" />
 
             {/* Schema.org structured data */}
             <script type="application/ld+json">

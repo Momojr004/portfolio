@@ -75,7 +75,7 @@ const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
             {/* Placeholder avant chargement */}
             {!isInView && (
                 <div className="w-full h-full bg-zinc-800 rounded-[2rem] md:rounded-[3rem] flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-[#CCFF00]/20 border-t-[#CCFF00] rounded-full animate-spin"></div>
+                    <div className="w-16 h-16 border-2 border-[#F5B731]/20 border-t-[#F5B731] rounded-full animate-spin"></div>
                 </div>
             )}
 
@@ -105,7 +105,7 @@ const OptimizedVideo: React.FC<OptimizedVideoProps> = ({
             {/* Indicateur de lecture */}
             {isInView && !isPlaying && isHovered && (
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center rounded-[2rem] md:rounded-[3rem]">
-                    <div className="w-12 h-12 bg-[#CCFF00] rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#F5B731] rounded-full flex items-center justify-center">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M8 5v14l11-7L8 5z" fill="black" />
                         </svg>

@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
       <nav className="fixed top-0 left-0 w-full z-[100] px-6 md:px-20 py-8 flex justify-between items-center pointer-events-auto">
         <Link to="/" className={`text-xl font-black transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-          MOMO<span className="text-[#CCFF00]">.</span>
+          MOMO<span className="text-[#F5B731]">.</span>
         </Link>
 
         <div className="flex items-center gap-6 md:gap-12">
@@ -36,11 +36,11 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`nav-link text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-[#CCFF00] focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isActive ? 'text-[#CCFF00]' : isDark ? 'text-white' : 'text-zinc-900'}`}
+                  className={`nav-link text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-[#F5B731] focus-visible:outline-2 focus-visible:outline-[#F5B731] ${isActive ? 'text-[#F5B731]' : isDark ? 'text-white' : 'text-zinc-900'}`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="block h-[2px] bg-[#CCFF00] mt-1 rounded-full" />
+                    <span className="block h-[2px] bg-[#F5B731] mt-1 rounded-full" />
                   )}
                 </Link>
               );
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleTheme}
               aria-label={isDark ? "Passer au mode clair" : "Passer au mode sombre"}
-              className={`p-2 rounded-full border transition-all focus-visible:outline-2 focus-visible:outline-[#CCFF00] ${isDark ? 'border-zinc-800 text-white hover:bg-white hover:text-black' : 'border-zinc-300 text-zinc-900 hover:bg-black hover:text-white'
+              className={`p-2 rounded-full border transition-all focus-visible:outline-2 focus-visible:outline-[#F5B731] ${isDark ? 'border-zinc-800 text-white hover:bg-white hover:text-black' : 'border-zinc-300 text-zinc-900 hover:bg-black hover:text-white'
                 }`}
             >
               {isDark ? <Sun size={14} /> : <Moon size={14} />}
@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
             <Link
               to="/contact"
               aria-label="Aller à la page de contact"
-              className="px-3 md:px-6 py-2 border border-[#CCFF00] rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#CCFF00] hover:bg-[#CCFF00] hover:text-black transition-all focus-visible:outline-2 focus-visible:outline-[#CCFF00]"
+              className="px-3 md:px-6 py-2 border border-[#F5B731] rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#F5B731] hover:bg-[#F5B731] hover:text-black transition-all focus-visible:outline-2 focus-visible:outline-[#F5B731]"
             >
               <span className="hidden sm:inline">Contact</span>
               <span className="sm:hidden">•</span>

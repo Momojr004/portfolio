@@ -83,7 +83,7 @@ const StackPage: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             className="text-4xl sm:text-6xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tighter leading-none mb-10"
           >
-            ENGINEERING <br /> <span className="text-[#CCFF00]">STACK.</span>
+            ENGINEERING <br /> <span className="text-[#F5B731]">STACK.</span>
           </motion.h1>
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -112,7 +112,7 @@ const StackPage: React.FC = () => {
                   size={24}
                   className="grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
-                <span className="text-sm font-bold uppercase tracking-[0.3em] opacity-30 group-hover:opacity-100 group-hover:text-[#CCFF00] transition-all">
+                <span className="text-sm font-bold uppercase tracking-[0.3em] opacity-30 group-hover:opacity-100 group-hover:text-[#F5B731] transition-all">
                   {icon}
                 </span>
               </div>
@@ -124,11 +124,11 @@ const StackPage: React.FC = () => {
           {techGroups.map((group, idx) => (
             <TiltCard key={group.title} intensity={12} className="h-full">
               <div className={`p-10 md:p-12 rounded-[3rem] border-2 transition-colors relative group h-full ${isDark
-                ? 'bg-zinc-900/40 border-zinc-800/50 hover:border-[#CCFF00]/50'
-                : 'bg-white border-zinc-100 hover:border-[#CCFF00]'
+                ? 'bg-zinc-900/40 border-zinc-800/50 hover:border-[#F5B731]/50'
+                : 'bg-white border-zinc-100 hover:border-[#F5B731]'
                 }`}>
                 <div className="flex items-center gap-4 mb-10">
-                  <div className="p-4 bg-[#CCFF00] rounded-2xl text-black shadow-[0_0_20px_rgba(204,255,0,0.2)]">
+                  <div className="p-4 bg-[#F5B731] rounded-2xl text-black shadow-[0_0_20px_rgba(245,183,49,0.2)]">
                     {group.icon}
                   </div>
                   <h2 className={`text-3xl font-black tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
@@ -140,9 +140,9 @@ const StackPage: React.FC = () => {
                   {group.items.map(tech => (
                     <motion.span
                       key={tech.name}
-                      whileHover={{ scale: 1.05, borderColor: "#CCFF00" }}
+                      whileHover={{ scale: 1.05, borderColor: "#F5B731" }}
                       className={`flex items-center gap-3 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all cursor-default ${isDark
-                        ? 'border-zinc-800 bg-zinc-900/50 text-zinc-300 hover:text-[#CCFF00]'
+                        ? 'border-zinc-800 bg-zinc-900/50 text-zinc-300 hover:text-[#F5B731]'
                         : 'border-zinc-200 bg-zinc-50 text-zinc-600 hover:text-black'
                         }`}
                     >
@@ -158,7 +158,7 @@ const StackPage: React.FC = () => {
                 </div>
 
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 pointer-events-none group-hover:bg-[#CCFF00]/5 transition-colors duration-500 rounded-[3rem]" />
+                <div className="absolute inset-0 pointer-events-none group-hover:bg-[#F5B731]/5 transition-colors duration-500 rounded-[3rem]" />
               </div>
             </TiltCard>
           ))}
@@ -171,8 +171,8 @@ const StackPage: React.FC = () => {
           className={`mt-40 p-12 md:p-24 rounded-[4rem] text-center relative overflow-hidden group ${isDark ? 'bg-white text-black' : 'bg-black text-white'}`}
         >
           {/* Subtle animated background elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#CCFF00] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#CCFF00] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#F5B731] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#F5B731] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000" />
 
           <h2 className="text-4xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.9] relative z-10">
             "PAS DE DETTE <br /> TECHNIQUE. <br /> JUSTE DE LA VALEUR."
