@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           initial="hidden"
           animate="show"
         >
-          <motion.p variants={item} className="text-[#CCFF00] font-bold tracking-widest mb-4 uppercase">
+          <motion.p variants={item} className="text-[#F5B731] font-bold tracking-widest mb-4 uppercase">
             Mouhamed Pouye — MOMO
           </motion.p>
           <motion.h1
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             JE PARLE BUSINESS<br />
-            <span className="text-[#CCFF00]">AVANT DE PARLER</span><br />
+            <span className="text-[#F5B731]">AVANT DE PARLER</span><br />
             <span className="italic">CODE.</span>
           </motion.h1>
           <motion.p
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             variants={item}
             className={`text-2xl sm:text-3xl lg:text-[2rem] max-w-xl font-[800] leading-relaxed ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}
           >
-            Co-fondateur <strong className="text-[#CCFF00]">TerangaDev</strong> & Full Stack Developer <strong className="text-[#CCFF00]">EcoMed24</strong>. <br />
+            Co-fondateur <strong className="text-[#F5B731]">TerangaDev</strong> & Full Stack Developer <strong className="text-[#F5B731]">EcoMed24</strong>. <br />
           </motion.p>
           <motion.p
             variants={item}
@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="w-full md:w-2/5 h-[50vh] md:h-[70vh]">
-        <Suspense fallback={<div className="w-full h-full flex items-center justify-center"><div className="w-16 h-16 border-4 border-[#CCFF00] border-t-transparent rounded-full animate-spin" /></div>}>
+        <Suspense fallback={<div className="w-full h-full flex items-center justify-center"><div className="w-16 h-16 border-4 border-[#F5B731] border-t-transparent rounded-full animate-spin" /></div>}>
           <Experience3D />
         </Suspense>
       </div>

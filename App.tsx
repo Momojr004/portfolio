@@ -20,14 +20,23 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const PageLoader: React.FC = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
     <div className="relative">
-      <div className="w-12 h-12 border-t-2 border-[#CCFF00] border-solid rounded-full animate-spin"></div>
-      <div className="absolute inset-0 w-12 h-12 border-t-2 border-[#CCFF00]/20 border-solid rounded-full animate-spin animation-delay-75"></div>
+      <div className="w-12 h-12 border-t-2 border-[#F5B731] border-solid rounded-full animate-spin"></div>
+      <div className="absolute inset-0 w-12 h-12 border-t-2 border-[#F5B731]/20 border-solid rounded-full animate-spin animation-delay-75"></div>
     </div>
   </div>
 );
 
 // Theme Context
 export const ThemeContext = createContext({ isDark: true, toggleTheme: () => { } });
+
+// ScrollToTop — remet la page en haut à chaque navigation
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -45,9 +54,9 @@ const AnimatedRoutes = () => {
           <Route path="*" element={
             <div className="flex items-center justify-center min-h-[60vh]">
               <div className="text-center">
-                <h1 className="text-6xl font-black text-[#CCFF00] mb-4">404</h1>
+                <h1 className="text-6xl font-black text-[#F5B731] mb-4">404</h1>
                 <p className="text-xl text-zinc-400 mb-8">Page non trouvée</p>
-                <a href="/" className="px-6 py-3 bg-[#CCFF00] text-black font-bold rounded-full hover:bg-[#B8E600] transition-colors">
+                <a href="/" className="px-6 py-3 bg-[#F5B731] text-black font-bold rounded-full hover:bg-[#D9A528] transition-colors">
                   Retour à l'accueil
                 </a>
               </div>
@@ -86,6 +95,7 @@ const Layout = () => {
           }}
         />
         <CustomCursor />
+        <ScrollToTop />
         <Navbar />
         <main id="main-content" className="flex-grow">
           <AnimatedRoutes />

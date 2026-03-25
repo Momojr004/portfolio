@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouhamed Pouye | Développeur Full-Stack</title>
+    <title>Mouhamed Pouye — Développeur Full-Stack & Entrepreneur Tech | Dakar</title>
+
+    <!-- SEO Meta -->
+    <meta name="description"
+        content="Développeur Full-Stack & co-fondateur TerangaDev. Spécialisé React, Laravel, Flutter, Node.js. Digitalisation des PME africaines. Basé à Dakar, Sénégal.">
+    <meta name="author" content="Mouhamed Pouye">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://mohamedpouye.dev/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#F5B731">
+    <meta name="msapplication-TileColor" content="#F5B731">
+
+    <!-- Open Graph (fallback for pages without Helmet) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamedpouye.dev/">
+    <meta property="og:title" content="Mouhamed Pouye — Développeur Full-Stack & Entrepreneur Tech">
+    <meta property="og:description"
+        content="Développeur Full-Stack & co-fondateur TerangaDev. Digitalisation des PME africaines. Basé à Dakar, Sénégal.">
+    <meta property="og:image" content="https://mohamedpouye.dev/gallerie/photos/profil.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Mouhamed Pouye — Portfolio">
+
+    <!-- Twitter Card (fallback) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@guilganee">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="SN-DK">
+    <meta name="geo.placename" content="Dakar">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style"
@@ -14,6 +52,7 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     </noscript>
+
     <style>
         .theme-dark {
             background-color: #0B0B0B;
@@ -26,7 +65,7 @@
         }
 
         ::selection {
-            background-color: #CCFF00;
+            background-color: #F5B731;
             color: #0B0B0B;
         }
 
@@ -35,7 +74,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #CCFF00;
+            background: #F5B731;
             border-radius: 10px;
         }
 
@@ -93,6 +132,21 @@
 </head>
 
 <body class="theme-dark">
+    <!-- Noscript fallback for crawlers -->
+    <noscript>
+        <div style="padding: 2rem; text-align: center; font-family: Inter, sans-serif;">
+            <h1>Mouhamed Pouye — Développeur Full-Stack & Entrepreneur Tech</h1>
+            <p>Co-fondateur TerangaDev | Full Stack Developer EcoMed24 | Basé à Dakar, Sénégal</p>
+            <p>Spécialisé en React, Laravel, Flutter, Node.js, TypeScript. Digitalisation des PME africaines.</p>
+            <p>Contact : <a href="mailto:momo@terangadev.com">momo@terangadev.com</a></p>
+            <nav>
+                <a href="/work">Projets</a> |
+                <a href="/stack">Stack</a> |
+                <a href="/about">À propos</a> |
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

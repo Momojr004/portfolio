@@ -1,0 +1,32 @@
+{
+    "name": "Mouhamed Pouye — Développeur Full-Stack & Entrepreneur Tech",
+    "short_name": "Momo Portfolio",
+    "description": "Portfolio de Mouhamed Pouye, développeur Full-Stack & co-fondateur TerangaDev. Basé à Dakar, Sénégal.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0B0B0B",
+    "theme_color": "#F5B731",
+    "lang": "fr",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "categories": [
+        "portfolio",
+        "business",
+        "technology"
+    ]
+}

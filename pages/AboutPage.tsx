@@ -42,9 +42,10 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="À Propos - Mouhamed Pouye"
-        description="Découvrez le parcours de Mouhamed Pouye, développeur Full-Stack passionné. De son expérience technique à sa vision du développement web moderne."
-        keywords="mouhamed pouye, développeur, parcours, expérience, compétences, about, à propos"
+        title="À Propos de Mouhamed Pouye — Entrepreneur & Développeur Full-Stack | Dakar"
+        description="Parcours de Mouhamed Pouye : co-fondateur TerangaDev, développeur chez EcoMed24, incubé CONCREE. Entrepreneur tech dédié à la digitalisation de l’Afrique."
+        keywords="mouhamed pouye, terangadev co-fondateur, entrepreneur tech dakar, développeur sénégal, parcours, ecomed24, concree, digitalisation afrique"
+        type="profile"
       />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -55,7 +56,7 @@ const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-6xl md:text-[8rem] xl:text-[10rem] font-[900] tracking-[-0.04em] mb-20 leading-[0.75]" style={{ fontFamily: 'Inter, sans-serif' }}>
             ENTREPRENEUR <br />
-            <span className="text-[#CCFF00] italic">AVANT TOUT.</span>
+            <span className="text-[#F5B731] italic">AVANT TOUT.</span>
           </h1>
 
           {/* Section Philosophie & Vision */}
@@ -67,9 +68,9 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-xs font-[900] uppercase text-[#CCFF00] mb-6 tracking-[0.3em]">Philosophie</h2>
+              <h2 className="text-xs font-[900] uppercase text-[#F5B731] mb-6 tracking-[0.3em]">Philosophie</h2>
               <h3 className={`text-3xl md:text-4xl font-[900] leading-tight mb-6 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
-                ENTREPRENEUR <span className="text-[#CCFF00]">AVANT</span> DÉVELOPPEUR
+                ENTREPRENEUR <span className="text-[#F5B731]">AVANT</span> DÉVELOPPEUR
               </h3>
               <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
                 Contrairement aux développeurs qui codent d'abord, je pense <strong>business first</strong>.
@@ -79,7 +80,7 @@ const AboutPage: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="p-12 rounded-[3rem] bg-gradient-to-br from-[#CCFF00] to-[#A3FF00] text-black"
+              className="p-12 rounded-[3rem] bg-gradient-to-br from-[#F5B731] to-[#E09422] text-black"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -118,7 +119,7 @@ const AboutPage: React.FC = () => {
                 {portraitImages.map((_, index) => (
                   <div
                     key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${currentPortrait === index ? 'bg-[#CCFF00]' : 'bg-white/30'
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${currentPortrait === index ? 'bg-[#F5B731]' : 'bg-white/30'
                       }`}
                   />
                 ))}
@@ -127,7 +128,7 @@ const AboutPage: React.FC = () => {
               <div className="absolute bottom-8 left-8 text-white z-10">
                 <p className="text-xs font-[900] uppercase tracking-[0.3em] opacity-60 mb-2">Co-fondateur TerangaDev</p>
                 <h2 className="text-3xl md:text-5xl font-[900] tracking-tight">
-                  MOUHAMED <span className="text-[#CCFF00]">POUYE</span>
+                  MOUHAMED <span className="text-[#F5B731]">POUYE</span>
                 </h2>
                 <p className="text-sm opacity-80 mt-2 font-medium">Entrepreneur • Full Stack Developer</p>
               </div>
@@ -141,15 +142,15 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h3 className="text-xs font-[900] uppercase text-[#CCFF00] mb-4 tracking-[0.3em]">Ma Vision</h3>
+              <h3 className="text-xs font-[900] uppercase text-[#F5B731] mb-4 tracking-[0.3em]">Ma Vision</h3>
               <p className="text-xl font-bold leading-tight">
-                "Le <span className="text-[#CCFF00]">code</span> n'est qu'un outil. La solution est dans la compréhension profonde du <span className="italic">problème utilisateur</span>."
+                "Le <span className="text-[#F5B731]">code</span> n'est qu'un outil. La solution est dans la compréhension profonde du <span className="italic">problème utilisateur</span>."
               </p>
             </motion.div>
 
             {/* Stats Block */}
             <motion.div
-              className="md:col-span-4 md:row-span-1 bg-[#CCFF00] p-8 rounded-[2rem] text-black flex flex-col justify-center"
+              className="md:col-span-4 md:row-span-1 bg-[#F5B731] p-8 rounded-[2rem] text-black flex flex-col justify-center"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -186,7 +187,7 @@ const AboutPage: React.FC = () => {
                 {workspaceImages.map((_, index) => (
                   <div
                     key={index}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${currentWorkspace === index ? 'bg-[#CCFF00]' : 'bg-white/40'
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${currentWorkspace === index ? 'bg-[#F5B731]' : 'bg-white/40'
                       }`}
                   />
                 ))}
@@ -203,13 +204,13 @@ const AboutPage: React.FC = () => {
               <h3 className="text-xs font-[900] uppercase text-zinc-400 mb-4 tracking-[0.3em]">Parcours</h3>
               <p className="text-lg font-medium leading-relaxed">
                 <strong>ESTM</strong> → Freelance → <strong>Incubation CONCREE</strong> → Co-fondateur TerangaDev.
-                <span className="text-[#CCFF00]"> De développeur à entrepreneur</span>, avec une mission : digitaliser l'Afrique.
+                <span className="text-[#F5B731]"> De développeur à entrepreneur</span>, avec une mission : digitaliser l'Afrique.
               </p>
             </motion.div>
 
             {/* Contact CTA */}
             <motion.div
-              className="md:col-span-12 md:row-span-1 bg-gradient-to-br from-[#CCFF00] to-[#A3FF00] p-8 rounded-[2rem] text-black flex flex-col justify-center group cursor-pointer"
+              className="md:col-span-12 md:row-span-1 bg-gradient-to-br from-[#F5B731] to-[#E09422] p-8 rounded-[2rem] text-black flex flex-col justify-center group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.6 }}

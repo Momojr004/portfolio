@@ -4,27 +4,25 @@ Allow: /
 # Sitemap
 Sitemap: https://mohamedpouye.dev/sitemap.xml
 
-# Optimisations spécifiques
+# Block non-public paths
 Disallow: /api/
-Disallow: /_next/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /.env*
-Disallow: /package.json
-Disallow: /vite.config.ts
+Disallow: /.env
 
-# Allow important resources  
+# Allow all static resources for crawlers
 Allow: /gallerie/
 Allow: /icons/
 Allow: /*.css
 Allow: /*.js
 Allow: /*.svg
-Allow: /*.img
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
 Allow: /*.webp
 Allow: /*.mp4
 
-# Crawl delay pour éviter la surcharge
+# Googlebot-specific (faster crawl)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Other bots
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

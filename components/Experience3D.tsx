@@ -121,7 +121,7 @@ export const Experience3D: React.FC = () => {
       <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={IS_MOBILE ? [1, 1.5] : [1, 2]} gl={{ alpha: true, antialias: !IS_MOBILE, powerPreference: "high-performance" }}>
         <Suspense fallback={null}>
           <ambientLight intensity={1.5} />
-          <pointLight position={[10, 10, 10]} intensity={2.5} color="#CCFF00" />
+          <pointLight position={[10, 10, 10]} intensity={2.5} color="#F5B731" />
           <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
 
           <VisionarySphere />

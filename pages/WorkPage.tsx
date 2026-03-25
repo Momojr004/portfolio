@@ -15,9 +15,9 @@ const WorkPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Projets - Mouhamed Pouye"
-        description="Découvrez les projets de Mouhamed Pouye : SAP Station Manager, EcoMed24, Restaurant Manager. Solutions web innovantes et performantes."
-        keywords="projets, portfolio, réalisations, sap station manager, ecomed24, restaurant manager, web development"
+        title="Projets & Réalisations — Mouhamed Pouye | Portfolio Développeur Full-Stack"
+        description="Découvrez les projets de Mouhamed Pouye : SAP Station Manager (gestion stations-service), EcoMed24 (santé numérique), Restaurant Manager, Khayroukoum. Solutions B2B sur-mesure."
+        keywords="projets développeur dakar, sap station manager, ecomed24, restaurant manager, khayroukoum, portfolio réalisations, solutions b2b afrique"
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const WorkPage: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             className="text-7xl md:text-[12rem] font-black tracking-tighter leading-none mb-10"
           >
-            SELECTED <br /> <span className="text-[#CCFF00]">WORKS.</span>
+            SELECTED <br /> <span className="text-[#F5B731]">WORKS.</span>
           </motion.h1>
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -72,7 +72,7 @@ const WorkPage: React.FC = () => {
                       initial={{ y: "100%" }}
                       whileInView={{ y: 0 }}
                       transition={{ duration: 0.4, delay: 0.3 }}
-                      className="inline-block px-4 py-2 bg-[#CCFF00] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg"
+                      className="inline-block px-4 py-2 bg-[#F5B731] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg"
                     >
                       {project.category}
                     </motion.span>
@@ -82,9 +82,9 @@ const WorkPage: React.FC = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-4">
                     <span className="text-zinc-500 font-mono text-sm">0{idx + 1}</span>
-                    <div className={`h-[1px] flex-grow transition-all duration-500 origin-left scale-x-0 group-hover:scale-x-100 ${isDark ? 'bg-[#CCFF00]' : 'bg-black'}`} />
+                    <div className={`h-[1px] flex-grow transition-all duration-500 origin-left scale-x-0 group-hover:scale-x-100 ${isDark ? 'bg-[#F5B731]' : 'bg-black'}`} />
                   </div>
-                  <h3 className={`text-4xl md:text-6xl font-black tracking-tighter transition-all duration-500 group-hover:translate-x-4 ${isDark ? 'text-white group-hover:text-[#CCFF00]' : 'text-zinc-900 group-hover:text-black'}`}>
+                  <h3 className={`text-4xl md:text-6xl font-black tracking-tighter transition-all duration-500 group-hover:translate-x-4 ${isDark ? 'text-white group-hover:text-[#F5B731]' : 'text-zinc-900 group-hover:text-black'}`}>
                     {project.title}
                   </h3>
                 </div>
@@ -97,7 +97,7 @@ const WorkPage: React.FC = () => {
           <p className={`text-sm font-bold uppercase tracking-[0.5em] mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Prêt pour le prochain ?</p>
           <Link
             to="/"
-            className={`text-3xl md:text-5xl font-black underline decoration-[#CCFF00] decoration-4 underline-offset-8 hover:text-[#CCFF00] transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}
+            className={`text-3xl md:text-5xl font-black underline decoration-[#F5B731] decoration-4 underline-offset-8 hover:text-[#F5B731] transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}
           >
             RETOUR À L'ACCUEIL
           </Link>

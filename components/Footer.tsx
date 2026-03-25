@@ -16,14 +16,14 @@ export const Footer: React.FC = () => {
           className="text-6xl md:text-[10rem] font-black tracking-tighter leading-none mb-20"
         >
           LET'S BUILD <br />
-          <span className="text-[#CCFF00]">VALUE.</span>
+          <span className="text-[#F5B731]">VALUE.</span>
         </motion.h2>
 
         <div className={`w-full flex flex-col md:flex-row justify-between items-center gap-10 border-t pt-20 ${isDark ? 'border-zinc-900' : 'border-zinc-200'
           }`}>
           <div className="text-left">
             <p className="text-zinc-500 uppercase tracking-widest font-bold text-xs mb-4">Contact</p>
-            <a href="mailto:momo@terangadev.com" className="text-2xl font-black hover:text-[#CCFF00] transition-colors">momo@terangadev.com</a>
+            <a href="mailto:momo@terangadev.com" className="text-2xl font-black hover:text-[#F5B731] transition-colors">momo@terangadev.com</a>
             <br />
             <a href="mailto:guilganee@gmail.com" className="text-sm font-bold text-zinc-500 hover:text-current transition-colors mt-1 inline-block">guilganee@gmail.com</a>
           </div>
