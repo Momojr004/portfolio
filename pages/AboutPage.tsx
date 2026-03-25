@@ -11,16 +11,16 @@ const AboutPage: React.FC = () => {
   // Carrousel Portrait
   const [currentPortrait, setCurrentPortrait] = useState(0);
   const portraitImages = [
-    '/gallerie/photos/momo_portrait.jpeg',
-    '/gallerie/photos/momo_portrait-02.jpeg'
+    '/gallerie/photos/momo_portrait.webp',
+    '/gallerie/photos/momo_portrait-02.webp'
   ];
 
   // Carrousel Workspace
   const [currentWorkspace, setCurrentWorkspace] = useState(0);
   const workspaceImages = [
-    '/gallerie/photos/momo_workspace01.jpeg',
-    '/gallerie/photos/momo_workspace02.jpeg',
-    '/gallerie/photos/momo_workspace03.jpeg'
+    '/gallerie/photos/momo_workspace01.webp',
+    '/gallerie/photos/momo_workspace02.webp',
+    '/gallerie/photos/momo_workspace03.webp'
   ];
 
   // Effet pour le carrousel portrait

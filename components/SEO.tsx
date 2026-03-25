@@ -16,7 +16,7 @@ const SEO: React.FC<SEOProps> = ({
     title = 'Mouhamed Pouye - Développeur Full-Stack | Portfolio',
     description = 'Développeur Full-Stack passionné créant des solutions web innovantes. Spécialisé en React, Node.js, TypeScript. Disponible pour vos projets.',
     keywords = 'développeur full-stack, react, node.js, typescript, javascript, web development, portfolio, mouhamed pouye, freelance développeur',
-    image = '/gallerie/photos/seo-preview.jpg',
+    image = '/gallerie/photos/profil.webp',
     url,
     type = 'website',
     author = 'Mouhamed Pouye'

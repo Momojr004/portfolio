@@ -1,8 +1,10 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, lazy, Suspense } from 'react';
 import { motion, Variants, BezierDefinition } from 'framer-motion';
-import { Experience3D } from './Experience3D';
 import { ThemeContext } from '../App';
+
+// Lazy load Three.js (~300KB) — ne charge que quand le composant Hero est visible
+const Experience3D = lazy(() => import('./Experience3D').then(m => ({ default: m.Experience3D })));
 
 export const Hero: React.FC = () => {
   const { isDark } = useContext(ThemeContext);
@@ -72,7 +74,9 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="w-full md:w-2/5 h-[50vh] md:h-[70vh]">
-        <Experience3D />
+        <Suspense fallback={<div className="w-full h-full flex items-center justify-center"><div className="w-16 h-16 border-4 border-[#CCFF00] border-t-transparent rounded-full animate-spin" /></div>}>
+          <Experience3D />
+        </Suspense>
       </div>
     </section>
   );

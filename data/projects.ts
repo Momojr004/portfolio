@@ -35,28 +35,28 @@ export const projects: Project[] = [
         title: 'SAP STATION MANAGER',
         category: 'Digitalisation / B2B',
         description: 'Gestion digitale des franchises de stations-service au Sénégal',
-        img: '/gallerie/photos/sap-preview.png'
+        img: '/gallerie/photos/sap-preview.webp'
     },
     {
         id: 'ecomed24',
         title: 'ECOMED24 PLATFORM',
         category: 'Santé Numérique / B2B',
         description: 'Écosystème de santé numérique pour l\'Afrique',
-        img: '/gallerie/photos/ecomed_preview.png'
+        img: '/gallerie/photos/ecomed_preview.webp'
     },
     {
         id: 'restaurant-manager',
         title: 'RESTAURANT MANAGER',
         category: 'Gestion / B2B',
         description: 'Solution complète de gestion pour restaurants et chaînes',
-        img: '/gallerie/photos/restaurant_preview.png'
+        img: '/gallerie/photos/restaurant_preview.webp'
     },
     {
         id: 'khayroukoum',
         title: 'KHAYROUKOUM',
         category: 'Humanitaire / B2B',
         description: 'Plateforme web dédiée à la gestion des projets d\'accès à l\'eau potable',
-        img: '/gallerie/photos/khayroukoum_preview.png'
+        img: '/gallerie/photos/preview_khayroukoum.webp'
     }
 ];
 
@@ -67,7 +67,7 @@ export const projectsData: Record<string, ProjectDetails> = {
         title: 'SAP STATION MANAGER',
         category: 'Digitalisation / B2B',
         description: 'Gestion digitale des franchises de stations-service au Sénégal',
-        img: '/gallerie/photos/sap-preview.png',
+        img: '/gallerie/photos/sap-preview.webp',
         year: '2024',
         client: 'Franchise Stations-Service Sénégal',
         role: 'Frontend Developer (Prestataire)',
@@ -77,14 +77,14 @@ export const projectsData: Record<string, ProjectDetails> = {
         video: '/gallerie/vidéos/sap-demo.mp4',
         liveUrl: 'https://sap-station-demo.mohamedpouye.dev',
         features: ['Gestion des ventes', 'Suivi des stocks', 'Tableau de bord admin', 'Rapports financiers'],
-        galleryImages: ['/gallerie/photos/sap_001.png', '/gallerie/photos/sap_002.png']
+        galleryImages: ['/gallerie/photos/sap_001.webp', '/gallerie/photos/sap_002.webp']
     },
     'ecomed24': {
         id: 'ecomed24',
         title: 'ECOMED24 PLATFORM',
         category: 'Santé Numérique / B2B',
         description: 'Écosystème de santé numérique pour l\'Afrique',
-        img: '/gallerie/photos/ecomed_preview.png',
+        img: '/gallerie/photos/ecomed_preview.webp',
         year: '2024',
         client: 'EcoMed24',
         role: 'Full Stack Developer',
@@ -94,14 +94,14 @@ export const projectsData: Record<string, ProjectDetails> = {
         video: '/gallerie/vidéos/demo_ecomed24.mp4',
         liveUrl: 'https://ecomed24.com',
         features: ['Téléconsultation', 'Dossiers patients', 'Collaboration médicale', 'Flux financiers'],
-        galleryImages: ['/gallerie/photos/ecomed_001.png', '/gallerie/photos/ecomed_002.png']
+        galleryImages: ['/gallerie/photos/ecomed_001.webp', '/gallerie/photos/ecomed_002.webp']
     },
     'restaurant-manager': {
         id: 'restaurant-manager',
         title: 'RESTAURANT MANAGER',
         category: 'Gestion / B2B',
         description: 'Solution complète de gestion pour restaurants et chaînes',
-        img: '/gallerie/photos/restaurant_preview.png',
+        img: '/gallerie/photos/restaurant_preview.webp',
         year: '2024',
         client: 'Chaînes de Restaurants',
         role: 'Full Stack Developer (100%)',
@@ -111,14 +111,14 @@ export const projectsData: Record<string, ProjectDetails> = {
         video: '/gallerie/vidéos/demo_restaurant.mp4',
         liveUrl: 'https://restaurant-manager-demo.mohamedpouye.dev',
         features: ['Gestion commandes', 'Supervision multi-restaurants', 'Console admin', 'Gestion abonnements'],
-        galleryImages: ['/gallerie/photos/restau_001.png', '/gallerie/photos/restau_002.png']
+        galleryImages: ['/gallerie/photos/restau_001.webp', '/gallerie/photos/restau_002.webp']
     },
     'khayroukoum': {
         id: 'khayroukoum',
         title: 'KHAYROUKOUM',
         category: 'Humanitaire / B2B',
         description: 'Plateforme web dédiée à la gestion des projets d\'accès à l\'eau potable',
-        img: '/gallerie/photos/khayroukoum_preview.png',
+        img: '/gallerie/photos/preview_khayroukoum.webp',
         year: '2024',
         client: 'Projets Humanitaires',
         role: 'Architecte Full Stack',
@@ -128,7 +128,7 @@ export const projectsData: Record<string, ProjectDetails> = {
         video: '/gallerie/vidéos/demo_khayroukoum.mp4',
         liveUrl: 'https://khayroukoum.org',
         features: ['Gestion projets hydrauliques', 'Suivi financements', 'Rôles avancés', 'API REST documentée'],
-        galleryImages: ['/gallerie/photos/khayroukoum001.png', '/gallerie/photos/khayroukoum002.png']
+        galleryImages: ['/gallerie/photos/khayroukoum001.webp', '/gallerie/photos/khayroukoum002.webp']
     }
 };
 

@@ -47,8 +47,8 @@ const ContactPage: React.FC = () => {
     <>
       <SEO
         title="Contact - Mouhamed Pouye"
-        description="Contactez Mouhamed Pouye pour vos projets de développement web. Disponible sur Paris et Dakar pour créer des solutions innovantes."
-        keywords="contact, mouhamed pouye, développeur freelance, projet web, collaboration, paris, dakar"
+        description="Contactez Mouhamed Pouye pour vos projets de développement web. Disponible pour créer des solutions innovantes."
+        keywords="contact, mouhamed pouye, développeur freelance, projet web, collaboration"
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -92,7 +92,7 @@ const ContactPage: React.FC = () => {
             <div className="mt-20 grid grid-cols-2 gap-10">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 mb-4">Location</p>
-                <p className="font-bold">Paris / Dakar <br /> Remote Friendly</p>
+                <p className="font-bold">Dakar, Sénégal <br /> Remote Friendly</p>
               </div>
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 mb-4">Socials</p>

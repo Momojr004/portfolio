@@ -44,8 +44,8 @@ const Home: React.FC = () => {
     <>
       <SEO
         title="D\u00e9veloppeur Full-Stack | Mouhamed Pouye - Portfolio"
-        description="D\u00e9veloppeur Full-Stack cr\u00e9ant des solutions web innovantes. Sp\u00e9cialis\u00e9 en React, Node.js, TypeScript. Disponible pour vos projets sur Paris et Dakar."
-        keywords="d\u00e9veloppeur full-stack, react, node.js, typescript, javascript, web development, portfolio, mouhamed pouye, freelance d\u00e9veloppeur, paris, dakar"
+        description="D\u00e9veloppeur Full-Stack cr\u00e9ant des solutions web innovantes. Sp\u00e9cialis\u00e9 en React, Node.js, TypeScript. Disponible pour vos projets."
+        keywords="d\u00e9veloppeur full-stack, react, node.js, typescript, javascript, web development, portfolio, mouhamed pouye, freelance d\u00e9veloppeur"
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-20 h-20 bg-[#191A21] rounded-xl flex items-center justify-center overflow-hidden">
                     <OptimizedImage
-                      src="/gallerie/photos/logo_terangaDev.png"
+                      src="/gallerie/photos/logo_terangaDev.webp"
                       alt="TerangaDev Logo"
                       className="w-8 h-8 object-contain"
                       width={32}
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-20 h-20 bg-[#fff] rounded-xl flex items-center justify-center overflow-hidden">
                     <OptimizedImage
-                      src="/gallerie/photos/logo_ecomed.png"
+                      src="/gallerie/photos/logo_ecomed.webp"
                       alt="EcoMed24 Logo"
                       className="w-20 h-20 object-contain"
                       width={80}

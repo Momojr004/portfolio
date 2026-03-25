@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       host: '0.0.0.0',
-      // SPA history API fallback pour BrowserRouter
       historyApiFallback: true,
     },
     plugins: [react()],
@@ -16,6 +15,32 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       }
-    }
+    },
+    build: {
+      // Optimisations de build
+      target: 'es2020',
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Séparer Three.js dans son propre chunk (~300KB)
+            'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
+            // Séparer Framer Motion (~65KB)
+            'framer': ['framer-motion'],
+            // Séparer React core
+            'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 500,
+      // Inliner les assets < 4KB en base64
+      assetsInlineLimit: 4096,
+    },
   };
 });
