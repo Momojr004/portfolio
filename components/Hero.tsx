@@ -74,7 +74,14 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="w-full md:w-2/5 h-[50vh] md:h-[70vh]">
-        <Suspense fallback={<div className="w-full h-full flex items-center justify-center"><div className="w-16 h-16 border-4 border-[#F5B731] border-t-transparent rounded-full animate-spin" /></div>}>
+        <Suspense fallback={
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="relative">
+              <div className="w-20 h-20 border-4 border-[#F5B731]/30 rounded-full" />
+              <div className="w-20 h-20 border-4 border-[#F5B731] border-t-transparent rounded-full animate-spin absolute inset-0" />
+            </div>
+          </div>
+        }>
           <Experience3D />
         </Suspense>
       </div>
