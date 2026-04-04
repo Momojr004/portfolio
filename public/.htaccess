@@ -1,11 +1,21 @@
-# Apache SPA routing
+# Apache SPA routing — only known routes get 200
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+
+  # Real files/dirs → serve directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d [OR]
+  RewriteCond %{REQUEST_FILENAME} -l
+  RewriteRule . - [L]
+
+  # Known SPA routes → index.html (HTTP 200)
+  RewriteRule ^$ /index.html [L]
+  RewriteRule ^(work|stack|about|contact)/?$ /index.html [L]
+  RewriteRule ^project/.+$ /index.html [L]
 </IfModule>
+
+# Unknown routes → serve React SPA with HTTP 404 status
+ErrorDocument 404 /index.html
 
 # Gzip Compression
 <IfModule mod_deflate.c>

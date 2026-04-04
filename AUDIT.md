@@ -2,7 +2,7 @@
 
 ## 🔴 CRITIQUE — Sécurité
 
-- [ ] **S1** — Webhook sans rate-limiting (`deploy.php` sur le serveur)
+- [x] **S1** — ~~Webhook sans rate-limiting~~ → rate-limit 60s par fichier + HMAC SHA256 dans deploy.php
 - [x] **S2** — ~~Email `guilganee@gmail.com` hardcodé~~ → remplacé par variable env
 - [x] **S3** — ~~Fichier `public/test-emailjs.js`~~ → supprimé
 - [x] **S4** — ~~Liens Instagram avec tracking params~~ → nettoyés
@@ -13,7 +13,7 @@
 - [x] **SEO2** — ~~`public/sitemap.xml` pointe vers `mohamedpouye.dev`~~ → corrigé
 - [x] **SEO3** — ~~`public/robots.txt` pointe vers le mauvais sitemap~~ → corrigé
 - [ ] **SEO4** — SPA React sans pré-rendu (SSR/SSG) = SEO faible
-- [ ] **SEO5** — Route 404 renvoie HTTP 200 (limitation SPA, nécessite SSR ou config .htaccess)
+- [x] **SEO5** — ~~Route 404 renvoie HTTP 200~~ → .htaccess ne réécrit que les routes connues, ErrorDocument 404 pour le reste
 - [x] **SEO6** — ~~Meta OG/Twitter en double~~ → supprimées de index.html, Helmet gère tout
 
 ## 🟠 IMPORTANT — Performance
