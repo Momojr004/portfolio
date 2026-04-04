@@ -62,7 +62,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`text-sm font-bold uppercase tracking-[0.4em] mb-16 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}
+              className={`text-sm font-bold uppercase tracking-[0.4em] mb-16 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}
             >
               Entreprises
             </motion.h2>
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <h3 className={`text-2xl font-black ${isDark ? 'text-white' : 'text-zinc-900'}`}>TerangaDev</h3>
-                    <p className={`text-sm font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>Co-fondateur, Responsable Qualité & Business Developer</p>
+                    <p className={`text-sm font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Co-fondateur, Responsable Qualité & Business Developer</p>
                   </div>
                 </div>
                 <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <h3 className={`text-2xl font-black ${isDark ? 'text-white' : 'text-zinc-900'}`}>EcoMed24</h3>
-                    <p className={`text-sm font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>Full Stack Developer</p>
+                    <p className={`text-sm font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Full Stack Developer</p>
                   </div>
                 </div>
                 <p className={`text-lg leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
 
         {/* Services Section */}
         <section className={`py-32 px-6 md:px-20 border-t ${isDark ? 'border-zinc-800' : 'border-zinc-200'}`}>
-          <h2 className={`text-sm font-bold uppercase tracking-[0.4em] mb-16 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Expertise</h2>
+          <h2 className={`text-sm font-bold uppercase tracking-[0.4em] mb-16 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <motion.div
@@ -164,7 +164,7 @@ const Home: React.FC = () => {
               >
                 <div className="text-[#F5B731] mb-6 transition-transform group-hover:scale-110">{s.icon}</div>
                 <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{s.title}</h3>
-                <p className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>{s.desc}</p>
+                <p className={isDark ? 'text-zinc-400' : 'text-zinc-600'}>{s.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -5,39 +5,36 @@ import { ThemeContext } from '../App';
 import OptimizedImage from '../components/OptimizedImage';
 import SEO from '../components/SEO';
 
+const portraitImages = [
+  '/gallerie/photos/momo_portrait.webp',
+  '/gallerie/photos/momo_portrait-02.webp'
+];
+
+const workspaceImages = [
+  '/gallerie/photos/momo_workspace01.webp',
+  '/gallerie/photos/momo_workspace02.webp',
+  '/gallerie/photos/momo_workspace03.webp'
+];
+
 const AboutPage: React.FC = () => {
   const { isDark } = useContext(ThemeContext);
 
-  // Carrousel Portrait
   const [currentPortrait, setCurrentPortrait] = useState(0);
-  const portraitImages = [
-    '/gallerie/photos/momo_portrait.webp',
-    '/gallerie/photos/momo_portrait-02.webp'
-  ];
-
-  // Carrousel Workspace
   const [currentWorkspace, setCurrentWorkspace] = useState(0);
-  const workspaceImages = [
-    '/gallerie/photos/momo_workspace01.webp',
-    '/gallerie/photos/momo_workspace02.webp',
-    '/gallerie/photos/momo_workspace03.webp'
-  ];
 
-  // Effet pour le carrousel portrait
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPortrait((prev) => (prev + 1) % portraitImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [portraitImages.length]);
+  }, []);
 
-  // Effet pour le carrousel workspace
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWorkspace((prev) => (prev + 1) % workspaceImages.length);
     }, 3500);
     return () => clearInterval(interval);
-  }, [workspaceImages.length]);
+  }, []);
 
   return (
     <>

@@ -22,26 +22,26 @@ export const Footer: React.FC = () => {
         <div className={`w-full flex flex-col md:flex-row justify-between items-center gap-10 border-t pt-20 ${isDark ? 'border-zinc-900' : 'border-zinc-200'
           }`}>
           <div className="text-left">
-            <p className="text-zinc-500 uppercase tracking-widest font-bold text-xs mb-4">Contact</p>
+            <p className={`uppercase tracking-widest font-bold text-xs mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Contact</p>
             <a href="mailto:momo@terangadev.com" className="text-2xl font-black hover:text-[#F5B731] transition-colors">momo@terangadev.com</a>
             <br />
-            <a href="mailto:guilganee@gmail.com" className="text-sm font-bold text-zinc-500 hover:text-current transition-colors mt-1 inline-block">guilganee@gmail.com</a>
+            <a href="mailto:guilganee@gmail.com" className={`text-sm font-bold hover:text-current transition-colors mt-1 inline-block ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>guilganee@gmail.com</a>
           </div>
 
           <div className="flex gap-8">
-            <a href="https://www.linkedin.com/in/mouhamed-pouye-753462271/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
+            <a href="https://www.linkedin.com/in/mouhamed-pouye-753462271/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className={`font-bold uppercase tracking-widest text-xs hover:text-current transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
               LinkedIn
             </a>
-            <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
+            <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className={`font-bold uppercase tracking-widest text-xs hover:text-current transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
               GitHub
             </a>
-            <a href="https://www.instagram.com/guilganee" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
+            <a href="https://www.instagram.com/guilganee" target="_blank" rel="noopener noreferrer" className={`font-bold uppercase tracking-widest text-xs hover:text-current transition-colors ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
               Instagram
             </a>
           </div>
 
           <div className="text-right hidden md:block">
-            <p className="text-zinc-500 uppercase tracking-widest font-bold text-xs">© 2026</p>
+            <p className={`uppercase tracking-widest font-bold text-xs ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>© 2026</p>
             <p className="font-bold uppercase">MOUHAMED POUYE</p>
           </div>
         </div>

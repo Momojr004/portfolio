@@ -7,6 +7,7 @@ import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
+import SEO from './components/SEO';
 
 // Code splitting avec React.lazy
 const Home = React.lazy(() => import('./pages/Home'));
@@ -40,6 +41,7 @@ const ScrollToTop = () => {
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  const { isDark } = useContext(ThemeContext);
   return (
     <AnimatePresence mode="wait">
       <Suspense fallback={<PageLoader />}>
@@ -52,15 +54,18 @@ const AnimatedRoutes = () => {
           <Route path="/project/:id" element={<ProjectDetails />} />
           {/* Page 404 */}
           <Route path="*" element={
-            <div className="flex items-center justify-center min-h-[60vh]">
-              <div className="text-center">
-                <h1 className="text-6xl font-black text-[#F5B731] mb-4">404</h1>
-                <p className="text-xl text-zinc-400 mb-8">Page non trouvée</p>
-                <a href="/" className="px-6 py-3 bg-[#F5B731] text-black font-bold rounded-full hover:bg-[#D9A528] transition-colors">
-                  Retour à l'accueil
-                </a>
+            <>
+              <SEO title="404 — Page non trouvée" description="Cette page n'existe pas." noindex={true} />
+              <div className="flex items-center justify-center min-h-[60vh]">
+                <div className="text-center">
+                  <h1 className="text-6xl font-black text-[#F5B731] mb-4">404</h1>
+                  <p className={`text-xl mb-8 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Page non trouvée</p>
+                  <a href="/" className="px-6 py-3 bg-[#F5B731] text-black font-bold rounded-full hover:bg-[#D9A528] transition-colors">
+                    Retour à l'accueil
+                  </a>
+                </div>
               </div>
-            </div>
+            </>
           } />
         </Routes>
       </Suspense>

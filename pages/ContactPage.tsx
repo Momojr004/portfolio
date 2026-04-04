@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
                 transition={{ delay: 0.4 }}
                 className="space-y-8"
               >
-                <p className={`text-xl md:text-2xl font-medium max-w-md ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                <p className={`text-xl md:text-2xl font-medium max-w-md ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                   Une idée ? Un projet complexe ? Ou simplement envie de parler business & tech ? Discutons-en.
                 </p>
 
@@ -85,7 +85,7 @@ const ContactPage: React.FC = () => {
                     momo@terangadev.com
                     <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                   </a>
-                  <a href="mailto:guilganee@gmail.com" className={`group flex items-center gap-3 text-lg font-bold transition-colors ${isDark ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600'}`}>
+                  <a href="mailto:guilganee@gmail.com" className={`group flex items-center gap-3 text-lg font-bold transition-colors ${isDark ? 'text-zinc-400 hover:text-zinc-300' : 'text-zinc-600 hover:text-zinc-800'}`}>
                     guilganee@gmail.com
                   </a>
                 </div>
@@ -94,11 +94,11 @@ const ContactPage: React.FC = () => {
 
             <div className="mt-20 grid grid-cols-2 gap-10">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 mb-4">Location</p>
+                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Location</p>
                 <p className="font-bold">Dakar, Sénégal <br /> Remote Friendly</p>
               </div>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 mb-4">Socials</p>
+                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Socials</p>
                 <div className="flex flex-col gap-1">
                   <a href="https://www.linkedin.com/in/mouhamed-pouye-753462271/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">LinkedIn</a>
                   <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">GitHub</a>
@@ -123,7 +123,7 @@ const ContactPage: React.FC = () => {
                     <Send size={32} />
                   </div>
                   <h3 className="text-3xl font-black uppercase tracking-tighter">Message Reçu !</h3>
-                  <p className="text-zinc-500 font-medium">Je reviens vers vous dans les prochaines 24 heures.</p>
+                  <p className={`font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Je reviens vers vous dans les prochaines 24 heures.</p>
                   <button
                     onClick={() => setFormState('idle')}
                     aria-label="Envoyer un autre message"
@@ -142,7 +142,7 @@ const ContactPage: React.FC = () => {
                     <Send size={32} />
                   </div>
                   <h3 className="text-3xl font-black uppercase tracking-tighter">Erreur d'envoi</h3>
-                  <p className="text-zinc-500 font-medium">{errorMessage}</p>
+                  <p className={`font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>{errorMessage}</p>
                   <button
                     onClick={() => setFormState('idle')}
                     aria-label="Réessayer l'envoi"
@@ -157,7 +157,7 @@ const ContactPage: React.FC = () => {
                   className="space-y-8"
                 >
                   <div className="space-y-2">
-                    <label htmlFor="fullName" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Nom complet</label>
+                    <label htmlFor="fullName" className={`text-[10px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Nom complet</label>
                     <input
                       id="fullName"
                       name="fullName"
@@ -171,7 +171,7 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Email professionnel</label>
+                    <label htmlFor="email" className={`text-[10px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Email professionnel</label>
                     <input
                       id="email"
                       name="email"
@@ -185,7 +185,7 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500">Message</label>
+                    <label htmlFor="message" className={`text-[10px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Message</label>
                     <textarea
                       id="message"
                       name="message"

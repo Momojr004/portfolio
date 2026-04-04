@@ -94,7 +94,7 @@ const WorkPage: React.FC = () => {
         </div>
 
         <div className="mt-60 text-center">
-          <p className={`text-sm font-bold uppercase tracking-[0.5em] mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>Prêt pour le prochain ?</p>
+          <p className={`text-sm font-bold uppercase tracking-[0.5em] mb-8 ${isDark ? 'text-zinc-600' : 'text-zinc-500'}`}>Prêt pour le prochain ?</p>
           <Link
             to="/"
             className={`text-3xl md:text-5xl font-black underline decoration-[#F5B731] decoration-4 underline-offset-8 hover:text-[#F5B731] transition-colors ${isDark ? 'text-white' : 'text-zinc-900'}`}

@@ -95,7 +95,7 @@ const StackPage: React.FC = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className={`text-xl md:text-3xl max-w-3xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}
+              className={`text-xl md:text-3xl max-w-3xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}
             >
               Stack orientée business : Laravel pour la robustesse backend, React/Flutter pour l'UX, et des bases de données adaptées aux besoins africains.
             </motion.p>

@@ -3,43 +3,43 @@
 ## 🔴 CRITIQUE — Sécurité
 
 - [ ] **S1** — Webhook sans rate-limiting (`deploy.php` sur le serveur)
-- [ ] **S2** — Email `guilganee@gmail.com` hardcodé dans `services/emailService.ts:79` (visible dans le bundle JS)
-- [ ] **S3** — Fichier `public/test-emailjs.js` déployé en production (potentielles clés exposées)
-- [ ] **S4** — Liens Instagram avec paramètres de tracking personnels dans `pages/ContactPage.tsx` et `components/Footer.tsx`
+- [x] **S2** — ~~Email `guilganee@gmail.com` hardcodé~~ → remplacé par variable env
+- [x] **S3** — ~~Fichier `public/test-emailjs.js`~~ → supprimé
+- [x] **S4** — ~~Liens Instagram avec tracking params~~ → nettoyés
 
 ## 🔴 CRITIQUE — SEO & Référencement
 
-- [ ] **SEO1** — `BASE_URL = 'https://mohamedpouye.dev'` dans `components/SEO.tsx` → doit être `https://momo.terangadev.com`
-- [ ] **SEO2** — `public/sitemap.xml` pointe vers `mohamedpouye.dev` partout
-- [ ] **SEO3** — `public/robots.txt` pointe vers le mauvais sitemap
+- [x] **SEO1** — ~~`BASE_URL = 'https://mohamedpouye.dev'`~~ → corrigé vers `https://momo.terangadev.com`
+- [x] **SEO2** — ~~`public/sitemap.xml` pointe vers `mohamedpouye.dev`~~ → corrigé
+- [x] **SEO3** — ~~`public/robots.txt` pointe vers le mauvais sitemap~~ → corrigé
 - [ ] **SEO4** — SPA React sans pré-rendu (SSR/SSG) = SEO faible
-- [ ] **SEO5** — Route 404 renvoie HTTP 200 au lieu de 404 réel (`App.tsx`)
-- [ ] **SEO6** — Meta OG/Twitter en double entre `index.html` et `components/SEO.tsx` (Helmet)
+- [ ] **SEO5** — Route 404 renvoie HTTP 200 (limitation SPA, nécessite SSR ou config .htaccess)
+- [x] **SEO6** — ~~Meta OG/Twitter en double~~ → supprimées de index.html, Helmet gère tout
 
 ## 🟠 IMPORTANT — Performance
 
 - [ ] **P1** — Three.js = 318KB gzippé pour un simple cercle photo + sphère transparente
-- [ ] **P2** — Vidéos MP4 dans dist (261MB total !). Externaliser sur CDN ou compresser
-- [ ] **P3** — Images en double format (.png ET .webp). Supprimer les .png inutiles
-- [ ] **P4** — CSS dupliqué dans `src/index.css` (blocs écrits 2 fois : `::selection`, scrollbar, `@keyframes noise`)
-- [ ] **P5** — `index.html` contient ~80 lignes de styles inline qui sont aussi dans `index.css`
+- [x] **P2** — ~~Vidéos 253MB~~ → compressées à 11MB (-96%)
+- [x] **P3** — ~~Images PNG doublons~~ → supprimées (uniquement .webp conservés)
+- [x] **P4** — ~~CSS dupliqué~~ → nettoyé
+- [x] **P5** — ~~Styles inline dans index.html~~ → réduit au critical CSS
 - [ ] **P6** — Pas de CDN (assets servis directement depuis O2switch)
-- [ ] **P7** — Warning build `/index.css doesn't exist at build time` — import `./src/index.css` dans `index.tsx` résolu au runtime
+- [x] **P7** — ~~Warning build `/index.css`~~ → corrigé, supprimé le link inutile
 
 ## 🟠 IMPORTANT — Code mort / Fichiers inutiles
 
-- [ ] **D1** — `services/formspreeService.ts` jamais importé → supprimer
-- [ ] **D2** — `services/web3FormService.ts` jamais importé → supprimer
-- [ ] **D3** — `services/web3formsService.ts` jamais importé (doublon de D2) → supprimer
-- [ ] **D4** — `components/FileUpload.tsx` jamais importé → supprimer
-- [ ] **D5** — `utils/fileUtils.ts` utilisé uniquement par FileUpload (mort aussi) → supprimer
-- [ ] **D6** — `public/_redirects` fichier Netlify/Vercel, inutile sur O2switch → supprimer
-- [ ] **D7** — `mouhamed-photo.jpg` (129 octets) probablement corrompu/placeholder → vérifier et supprimer
+- [x] **D1** — ~~`services/formspreeService.ts`~~ → supprimé
+- [x] **D2** — ~~`services/web3FormService.ts`~~ → supprimé
+- [x] **D3** — ~~`services/web3formsService.ts`~~ → supprimé
+- [x] **D4** — ~~`components/FileUpload.tsx`~~ → supprimé
+- [x] **D5** — ~~`utils/fileUtils.ts`~~ → supprimé
+- [x] **D6** — ~~`public/_redirects`~~ → supprimé
+- [x] **D7** — ~~`mouhamed-photo.jpg`~~ → supprimé (129 octets, corrompu)
 
 ## 🟡 MOYEN — Contenu & Pertinence
 
 - [ ] **C1** — Tous les projets datent de 2024 — ajouter projets récents (2025-2026)
-- [ ] **C2** — URLs live des projets probablement mortes (`sap-station-demo.mohamedpouye.dev`, etc.)
+- [x] **C2** — ~~URLs live mortes~~ → supprimées (liveUrl: undefined) ou corrigées vers domaines actifs
 - [ ] **C3** — Mélange FR/EN incohérent (nav en anglais, contenu en français, SEO cible FR/SN)
 - [ ] **C4** — Stats "20+ Clients" et "2 Années" vagues et non vérifiables
 - [ ] **C5** — Pas de CV/PDF téléchargeable
@@ -48,19 +48,19 @@
 
 ## 🟡 MOYEN — Accessibilité & UX
 
-- [ ] **A1** — Navbar transparente illisible en scroll sur certaines sections (ex: section jaune)
-- [ ] **A2** — CTA "About" utilise `onClick` + `window.location.href` au lieu d'un `<a>` (`AboutPage.tsx`)
-- [ ] **A3** — Custom cursor masque le curseur natif (gêne les utilisateurs non-tech)
+- [x] **A1** — ~~Navbar transparente~~ → backdrop-blur ajouté
+- [x] **A2** — ~~CTA `onClick`~~ → remplacé par `<a>` sémantique
+- [x] **A3** — ~~Custom cursor masque le curseur natif~~ → les deux curseurs coexistent, natif visible
 - [ ] **A4** — Vidéos sans sous-titres ni description textuelle
-- [ ] **A5** — Contraste insuffisant en mode light (`text-zinc-400`/`text-zinc-500` sur `bg-zinc-50`)
-- [ ] **A6** — Thème non sauvegardé en `localStorage` (reset à chaque rechargement)
-- [ ] **A7** — Thème ne respecte pas `prefers-color-scheme` (force dark par défaut)
+- [x] **A5** — ~~Contraste insuffisant text-zinc-400/500~~ → upgradé zinc-500→zinc-400 (dark) + ajout isDark conditionnels partout
+- [x] **A6** — ~~Thème non sauvegardé~~ → localStorage implémenté
+- [x] **A7** — ~~Thème ne respecte pas `prefers-color-scheme`~~ → détection auto ajoutée
 
 ## 🟢 MINEUR — Qualité de code
 
-- [ ] **Q1** — Déclarations JSX en double dans `components/Experience3D.tsx` (`declare global` + `declare module`)
-- [ ] **Q2** — `useEffect` avec dépendance constante dans `pages/AboutPage.tsx`
-- [ ] **Q3** — PWA manifest référence des icônes inexistantes (`favicon-32x32.png`, `apple-touch-icon.png`)
+- [x] **Q1** — ~~Déclarations JSX en double~~ → supprimées
+- [x] **Q2** — ~~`useEffect` avec dépendance constante~~ → images déplacées hors du composant, deps correctes
+- [x] **Q3** — ~~PWA manifest icônes inexistantes~~ → nettoyé
 
 ---
 

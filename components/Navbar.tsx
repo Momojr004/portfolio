@@ -161,7 +161,7 @@ export const Navbar: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               transition={{ delay: 0.5 }}
-              className="absolute bottom-10 text-xs font-bold uppercase tracking-widest text-zinc-500"
+              className="absolute bottom-10 text-xs font-bold uppercase tracking-widest text-zinc-400"
             >
               momo@terangadev.com
             </motion.p>

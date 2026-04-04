@@ -28,7 +28,7 @@ export const Projects: React.FC = () => {
       className={`py-32 px-6 md:px-20 border-t ${isDark ? 'border-zinc-800/10' : 'border-zinc-200'}`}
     >
       <div className="flex justify-between items-end mb-20">
-        <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-zinc-500">Selected Work</h2>
+        <h2 className={`text-sm font-bold uppercase tracking-[0.4em] ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Selected Work</h2>
       </div>
 
       <div className="relative">
@@ -76,7 +76,7 @@ export const Projects: React.FC = () => {
               className={`group relative py-12 border-b transition-all ${isDark ? 'border-zinc-800/50' : 'border-zinc-200'} flex flex-col md:flex-row md:items-center justify-between block overflow-hidden`}
             >
               <div className="z-10 transition-transform duration-700 group-hover:translate-x-12">
-                <p className="text-xs font-bold text-zinc-500 mb-2 uppercase tracking-widest">{project.category}</p>
+                <p className={`text-xs font-bold mb-2 uppercase tracking-widest ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>{project.category}</p>
                 <h3 className={`text-5xl md:text-8xl font-black transition-colors duration-300 ${isDark ? 'text-white group-hover:text-[#F5B731]' : 'text-zinc-900 group-hover:text-[#F5B731]'
                   }`}>
                   {project.title}

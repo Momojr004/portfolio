@@ -16,6 +16,12 @@ export const CustomCursor: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // Respecter prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (cursorRef.current) cursorRef.current.style.display = 'none';
+      return;
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       posRef.current = { x: e.clientX, y: e.clientY };
       cancelAnimationFrame(rafRef.current);

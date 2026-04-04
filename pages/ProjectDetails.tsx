@@ -116,7 +116,7 @@ const ProjectDetails: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}>Client</h4>
+              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Client</h4>
               <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>{project.client}</p>
             </motion.div>
 
@@ -126,7 +126,7 @@ const ProjectDetails: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
             >
-              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}>Mon Rôle</h4>
+              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Mon Rôle</h4>
               <p className="text-lg font-bold text-[#F5B731]">{project.role}</p>
             </motion.div>
 
@@ -136,7 +136,7 @@ const ProjectDetails: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}>Stack Technique</h4>
+              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Stack Technique</h4>
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((s: string) => (
                   <span key={s} className={`px-4 py-2 border rounded-full text-[10px] font-black uppercase tracking-wider ${isDark ? 'border-zinc-800 text-zinc-300' : 'border-zinc-300 text-zinc-700'}`}>
@@ -152,7 +152,7 @@ const ProjectDetails: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
             >
-              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}>Fonctionnalités Clés</h4>
+              <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Fonctionnalités Clés</h4>
               <ul className="space-y-2">
                 {project.features.map((feature: string) => (
                   <li key={feature} className={`flex items-center gap-2 text-sm ${isDark ? 'text-zinc-300' : 'text-zinc-700'}`}>
@@ -163,16 +163,18 @@ const ProjectDetails: React.FC = () => {
               </ul>
             </motion.div>
 
-            <motion.a
-              href={project.liveUrl || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 px-8 py-4 bg-[#F5B731] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(245, 183, 49,0.3)] transition-all cursor-pointer"
-            >
-              Voir le Live <ExternalLink size={14} />
-            </motion.a>
+            {project.liveUrl && (
+              <motion.a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3 px-8 py-4 bg-[#F5B731] text-black rounded-full font-black text-xs uppercase tracking-widest hover:shadow-[0_0_30px_rgba(245, 183, 49,0.3)] transition-all cursor-pointer"
+              >
+                Voir le Live <ExternalLink size={14} />
+              </motion.a>
+            )}
           </div>
 
           {/* Content Area */}

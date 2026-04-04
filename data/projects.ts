@@ -76,7 +76,7 @@ export const projectsData: Record<string, ProjectDetails> = {
         desc: 'Digitalisation complète du processus de gestion d\'une franchise de station-service basée au Sénégal. Interface de gestion des ventes, stocks, employés et rapports financiers.',
         solution: 'Architecture React modulaire avec API Laravel pour gérer les opérations quotidiennes : ventes de carburant, gestion des stocks, suivi des employés, et génération de rapports en temps réel.',
         video: '/gallerie/vidéos/sap-demo.mp4',
-        liveUrl: 'https://sap-station-demo.mohamedpouye.dev',
+        liveUrl: undefined,
         features: ['Gestion des ventes', 'Suivi des stocks', 'Tableau de bord admin', 'Rapports financiers'],
         galleryImages: ['/gallerie/photos/sap_001.webp', '/gallerie/photos/sap_002.webp']
     },
@@ -110,7 +110,7 @@ export const projectsData: Record<string, ProjectDetails> = {
         desc: 'Application complète de gestion pour restaurants avec interface de supervision pour propriétaires et console admin.',
         solution: 'Architecture hybride avec base de données mixte, gestion des abonnements, et tableau de bord multi-niveaux pour gérants et propriétaires.',
         video: '/gallerie/vidéos/demo_restaurant.mp4',
-        liveUrl: 'https://restaurant-manager-demo.mohamedpouye.dev',
+        liveUrl: undefined,
         features: ['Gestion commandes', 'Supervision multi-restaurants', 'Console admin', 'Gestion abonnements'],
         galleryImages: ['/gallerie/photos/restau_001.webp', '/gallerie/photos/restau_002.webp']
     },

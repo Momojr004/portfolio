@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
           </motion.p>
           <motion.p
             variants={item}
-            className={`text-xl md:text-2xl max-w-xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}
+            className={`text-xl md:text-2xl max-w-xl font-medium leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}
           >
             Développeur orienté produit, pas juste lignes de code. Je transforme des idées claires en applications rentables.
           </motion.p>
