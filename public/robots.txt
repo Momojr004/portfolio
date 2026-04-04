@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mohamedpouye.dev/sitemap.xml
+Sitemap: https://momo.terangadev.com/sitemap.xml
 
 # Block non-public paths
 Disallow: /api/

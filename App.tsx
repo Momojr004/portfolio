@@ -69,11 +69,19 @@ const AnimatedRoutes = () => {
 };
 
 const Layout = () => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
   useSmoothScroll();
 
   const toggleTheme = () => {
-    setIsDark(prev => !prev);
+    setIsDark(prev => {
+      const next = !prev;
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+      return next;
+    });
   };
 
   useEffect(() => {

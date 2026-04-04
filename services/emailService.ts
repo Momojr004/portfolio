@@ -70,9 +70,9 @@ class EmailService {
                 from_name: formData.fullName,
                 from_email: formData.email,
                 message: formData.message,
-                to_email: 'guilganee@gmail.com', // Email de réception - VÉRIFIER QUE C'EST CORRECT !
+                to_email: import.meta.env.VITE_CONTACT_EMAIL || 'momo@terangadev.com',
                 sent_at: new Date().toLocaleString('fr-FR'),
-                site_url: import.meta.env.VITE_SITE_URL || 'http://localhost:3005'
+                site_url: import.meta.env.VITE_SITE_URL || 'https://momo.terangadev.com'
             };
 
             // Tentative d'envoi avec EmailJS et retry automatique

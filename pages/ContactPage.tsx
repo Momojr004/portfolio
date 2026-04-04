@@ -102,7 +102,7 @@ const ContactPage: React.FC = () => {
                 <div className="flex flex-col gap-1">
                   <a href="https://www.linkedin.com/in/mouhamed-pouye-753462271/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">LinkedIn</a>
                   <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">GitHub</a>
-                  <a href="https://www.instagram.com/guilganee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">Instagram</a>
+                  <a href="https://www.instagram.com/guilganee" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">Instagram</a>
                 </div>
               </div>
             </div>

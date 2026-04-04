@@ -15,34 +15,6 @@ const IS_MOBILE = typeof window !== 'undefined' && (
   window.innerWidth < 768
 );
 
-// Fix: Correctly define the Three.js elements in the React JSX namespace
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      mesh: ThreeElements['mesh'];
-      circleGeometry: ThreeElements['circleGeometry'];
-      meshBasicMaterial: ThreeElements['meshBasicMaterial'];
-      group: ThreeElements['group'];
-      ambientLight: ThreeElements['ambientLight'];
-      pointLight: ThreeElements['pointLight'];
-    }
-  }
-}
-
-// Additional fix for React 18+ type definitions if needed
-declare module 'react' {
-  namespace JSX {
-    interface IntrinsicElements {
-      mesh: ThreeElements['mesh'];
-      circleGeometry: ThreeElements['circleGeometry'];
-      meshBasicMaterial: ThreeElements['meshBasicMaterial'];
-      group: ThreeElements['group'];
-      ambientLight: ThreeElements['ambientLight'];
-      pointLight: ThreeElements['pointLight'];
-    }
-  }
-}
-
 const InnerPortrait = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   // Utilise la vraie photo de Mouhamed depuis le dossier gallerie

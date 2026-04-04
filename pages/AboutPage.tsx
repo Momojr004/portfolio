@@ -209,13 +209,13 @@ const AboutPage: React.FC = () => {
             </motion.div>
 
             {/* Contact CTA */}
-            <motion.div
-              className="md:col-span-12 md:row-span-1 bg-gradient-to-br from-[#F5B731] to-[#E09422] p-8 rounded-[2rem] text-black flex flex-col justify-center group cursor-pointer"
+            <motion.a
+              href="mailto:momo@terangadev.com"
+              className="md:col-span-12 md:row-span-1 bg-gradient-to-br from-[#F5B731] to-[#E09422] p-8 rounded-[2rem] text-black flex flex-col justify-center group cursor-pointer block no-underline"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.6 }}
               whileHover={{ scale: 1.02 }}
-              onClick={() => window.location.href = 'mailto:momo@terangadev.com'}
             >
               <h3 className="text-xs font-[900] uppercase opacity-60 mb-4 tracking-[0.3em]">Ready to Build?</h3>
               <p className="text-2xl font-[900] tracking-tight leading-tight">
@@ -224,7 +224,7 @@ const AboutPage: React.FC = () => {
               <p className="text-sm font-bold opacity-60 mt-2 group-hover:opacity-100 transition-opacity">
                 → momo@terangadev.com
               </p>
-            </motion.div>
+            </motion.a>
           </div>
         </div>
       </motion.div>

@@ -15,7 +15,7 @@ interface SEOProps {
     noindex?: boolean;
 }
 
-const BASE_URL = 'https://mohamedpouye.dev';
+const BASE_URL = 'https://momo.terangadev.com';
 
 const SEO: React.FC<SEOProps> = ({
     title = 'Mouhamed Pouye - Développeur Full-Stack & Entrepreneur Tech | Dakar',

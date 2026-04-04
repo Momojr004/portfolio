@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
             <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
               GitHub
             </a>
-            <a href="https://www.instagram.com/guilganee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
+            <a href="https://www.instagram.com/guilganee" target="_blank" rel="noopener noreferrer" className="font-bold uppercase tracking-widest text-xs text-zinc-500 hover:text-current transition-colors">
               Instagram
             </a>
           </div>

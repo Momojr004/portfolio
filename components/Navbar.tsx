@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
         Aller au contenu principal
       </a>
 
-      <nav className="fixed top-0 left-0 w-full z-[100] px-6 md:px-20 py-6 md:py-8 flex justify-between items-center pointer-events-auto">
+      <nav className={`fixed top-0 left-0 w-full z-[100] px-6 md:px-20 py-6 md:py-8 flex justify-between items-center pointer-events-auto backdrop-blur-md ${isDark ? 'bg-[#0B0B0B]/80' : 'bg-[#F5F5F0]/80'}`}>
         <Link to="/" className={`text-xl font-black transition-colors z-[110] ${isDark ? 'text-white' : isOpen ? 'text-white' : 'text-zinc-900'}`}>
           MOMO<span className="text-[#F5B731]">.</span>
         </Link>
