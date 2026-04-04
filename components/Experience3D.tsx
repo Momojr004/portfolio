@@ -1,15 +1,11 @@
 
-import React, { useRef, Suspense, useMemo, useState, useEffect } from 'react';
+import React, { useRef, Suspense, useState, useEffect } from 'react';
 import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import {
   Float,
-  MeshTransmissionMaterial,
   OrbitControls,
   Sphere,
-  Environment,
-  ContactShadows,
   useTexture,
-  Preload
 } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -92,23 +88,18 @@ const VisionarySphere = () => {
         </Suspense>
 
         <Sphere ref={shellRef} args={[1.9, IS_MOBILE ? 24 : 48, IS_MOBILE ? 24 : 48]}>
-          <MeshTransmissionMaterial
-            backside
-            samples={IS_MOBILE ? 2 : 6}
-            resolution={IS_MOBILE ? 128 : 256}
-            transmission={1.0}
-            roughness={0.0}
-            thickness={2.0}
+          <meshPhysicalMaterial
+            transmission={1}
+            roughness={0.05}
+            thickness={1.5}
             ior={1.1}
-            chromaticAberration={IS_MOBILE ? 0.01 : 0.03}
-            anisotropy={0.1}
-            distortion={0.1}
-            distortionScale={0.2}
-            temporalDistortion={0.0}
-            color="#ffffff"
-            attenuationDistance={2}
-            attenuationColor="#ffffff"
+            envMapIntensity={0.5}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
             transparent
+            opacity={0.3}
+            color="#ffffff"
+            side={THREE.BackSide}
           />
         </Sphere>
       </group>
@@ -127,19 +118,15 @@ export const Experience3D: React.FC = () => {
 
   return (
     <div className="w-full h-full cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={IS_MOBILE ? [1, 1] : [1, 1.5]} gl={{ alpha: true, antialias: !IS_MOBILE, powerPreference: "high-performance" }} frameloop="demand">
+      <Canvas camera={{ position: [0, 0, 5], fov: 40 }} dpr={IS_MOBILE ? [1, 1] : [1, 1.5]} gl={{ alpha: true, antialias: !IS_MOBILE, powerPreference: "high-performance" }}>
         <Suspense fallback={null}>
           <ambientLight intensity={1.5} />
           <pointLight position={[10, 10, 10]} intensity={2.5} color="#F5B731" />
           <pointLight position={[-10, -10, -10]} intensity={1} color="#ffffff" />
 
           <VisionarySphere />
-          <Environment preset="studio" />
-
-          {!IS_MOBILE && <ContactShadows position={[0, -2.5, 0]} opacity={0.3} scale={10} blur={3} far={4} />}
 
           <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} />
-          <Preload all />
         </Suspense>
       </Canvas>
     </div>
