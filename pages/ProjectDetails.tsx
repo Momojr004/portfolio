@@ -43,7 +43,7 @@ const ProjectDetails: React.FC = () => {
       <SEO
         title={`${project.title} — ${project.category} | Mouhamed Pouye`}
         description={project.desc}
-        keywords={`${project.title.toLowerCase()}, ${project.category.toLowerCase()}, ${project.stack.join(', ').toLowerCase()}, mouhamed pouye, case study`}
+        keywords={`${project.title.toLowerCase()}, ${project.category.toLowerCase()}, ${project.stack.join(', ').toLowerCase()}, mouhamed pouye, étude de cas`}
         image={project.img}
         type="article"
         publishedDate={`${project.year}-01-01`}
@@ -60,9 +60,9 @@ const ProjectDetails: React.FC = () => {
             aria-label="Retourner à la page précédente"
             className="flex items-center gap-2 font-bold uppercase tracking-widest text-xs hover:text-[#F5B731] transition-all cursor-pointer group focus-visible:outline-2 focus-visible:outline-[#F5B731]"
           >
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Projects
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Retour aux projets
           </button>
-          <span className="text-xs font-bold opacity-40 uppercase tracking-[0.2em]">Case Study / {project.year}</span>
+          <span className="text-xs font-bold opacity-40 uppercase tracking-[0.2em]">Étude de cas / {project.year}</span>
         </div>
 
         {/* Hero Video Section */}

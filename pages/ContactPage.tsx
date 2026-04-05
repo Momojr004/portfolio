@@ -67,7 +67,7 @@ const ContactPage: React.FC = () => {
                 transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
                 className="text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.8] mb-12"
               >
-                SAY <br /> <span className="text-[#F5B731]">HELLO.</span>
+                DITES <br /> <span className="text-[#F5B731]">BONJOUR.</span>
               </motion.h1>
 
               <motion.div
@@ -94,11 +94,11 @@ const ContactPage: React.FC = () => {
 
             <div className="mt-20 grid grid-cols-2 gap-10">
               <div>
-                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Location</p>
+                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Localisation</p>
                 <p className="font-bold">Dakar, Sénégal <br /> Remote Friendly</p>
               </div>
               <div>
-                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Socials</p>
+                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Réseaux</p>
                 <div className="flex flex-col gap-1">
                   <a href="https://www.linkedin.com/in/mouhamed-pouye-753462271/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">LinkedIn</a>
                   <a href="https://github.com/Momojr004" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#F5B731] transition-colors">GitHub</a>

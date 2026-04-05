@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             variants={item}
             className={`text-2xl sm:text-3xl lg:text-[2rem] max-w-xl font-[800] leading-relaxed ${isDark ? 'text-zinc-200' : 'text-zinc-900'}`}
           >
-            Co-fondateur <strong className="text-[#F5B731]">TerangaDev</strong> & Full Stack Developer <strong className="text-[#F5B731]">EcoMed24</strong>. <br />
+            Co-fondateur <strong className="text-[#F5B731]">TerangaDev</strong> & Développeur Full Stack <strong className="text-[#F5B731]">EcoMed24</strong>. <br />
           </motion.p>
           <motion.p
             variants={item}

@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl font-[900] tracking-tight">
                   MOUHAMED <span className="text-[#F5B731]">POUYE</span>
                 </h2>
-                <p className="text-sm opacity-80 mt-2 font-medium">Entrepreneur • Full Stack Developer</p>
+                <p className="text-sm opacity-80 mt-2 font-medium">Entrepreneur • Développeur Full Stack</p>
               </div>
             </motion.div>
 
@@ -147,7 +147,7 @@ const AboutPage: React.FC = () => {
 
             {/* Stats Block */}
             <motion.div
-              className="md:col-span-4 md:row-span-1 bg-[#F5B731] p-8 rounded-[2rem] text-black flex flex-col justify-center"
+              className="md:col-span-4 md:row-span-1 bg-[#F5B731] p-8 rounded-[2rem] text-black flex flex-col justify-between"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -162,6 +162,14 @@ const AboutPage: React.FC = () => {
                   <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-60">Années</p>
                 </div>
               </div>
+              <a
+                href="/cv-mouhamed-pouye.pdf"
+                download
+                className="mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-[#F5B731] font-black text-xs uppercase tracking-widest rounded-full hover:bg-black/80 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Télécharger mon CV
+              </a>
             </motion.div>
 
             {/* Work Photo Carousel */}
@@ -214,9 +222,9 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 1.6 }}
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className="text-xs font-[900] uppercase opacity-60 mb-4 tracking-[0.3em]">Ready to Build?</h3>
+              <h3 className="text-xs font-[900] uppercase opacity-60 mb-4 tracking-[0.3em]">Prêt à collaborer ?</h3>
               <p className="text-2xl font-[900] tracking-tight leading-tight">
-                LET'S TALK <span className="italic">BUSINESS</span>
+                PARLONS <span className="italic">BUSINESS</span>
               </p>
               <p className="text-sm font-bold opacity-60 mt-2 group-hover:opacity-100 transition-opacity">
                 → momo@terangadev.com

@@ -22,10 +22,10 @@ export const Navbar: React.FC = () => {
   }, [isOpen]);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/work', label: 'Work' },
+    { path: '/', label: 'Accueil' },
+    { path: '/work', label: 'Projets' },
     { path: '/stack', label: 'Stack' },
-    { path: '/about', label: 'About' },
+    { path: '/about', label: 'À propos' },
   ];
 
   return (

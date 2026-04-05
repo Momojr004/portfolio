@@ -32,13 +32,13 @@ const WorkPage: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             className="text-7xl md:text-[12rem] font-black tracking-tighter leading-none mb-10"
           >
-            SELECTED <br /> <span className="text-[#F5B731]">WORKS.</span>
+            PROJETS <br /> <span className="text-[#F5B731]">SÉLECTIONNÉS.</span>
           </motion.h1>
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className={`text-xl md:text-2xl max-w-2xl font-medium ${isDark ? 'text-zinc-500' : 'text-zinc-600'}`}
+            className={`text-xl md:text-2xl max-w-2xl font-medium ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}
           >
             De la digitalisation des PME africaines aux plateformes de santé numérique, découvrez des solutions qui transforment les secteurs traditionnels.
           </motion.p>

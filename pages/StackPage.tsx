@@ -9,7 +9,7 @@ import SEO from '../components/SEO';
 
 const techGroups = [
   {
-    title: "Frontend Development",
+    title: "Développement Frontend",
     icon: <Globe className="w-6 h-6" />,
     items: [
       { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -34,7 +34,7 @@ const techGroups = [
     ]
   },
   {
-    title: "Database & Storage",
+    title: "Base de données & Stockage",
     icon: <Database className="w-6 h-6" />,
     items: [
       { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
@@ -45,7 +45,7 @@ const techGroups = [
     ]
   },
   {
-    title: "Business & Tools",
+    title: "Outils & Business",
     icon: <Rocket className="w-6 h-6" />,
     items: [
       { name: "Laravel Sanctum", logo: "https://cdn.simpleicons.org/laravel/FF2D20" },
@@ -89,7 +89,7 @@ const StackPage: React.FC = () => {
               transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
               className="text-4xl sm:text-6xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tighter leading-none mb-10"
             >
-              ENGINEERING <br /> <span className="text-[#F5B731]">STACK.</span>
+              STACK <br /> <span className="text-[#F5B731]">TECHNIQUE.</span>
             </motion.h1>
             <motion.p
               initial={{ y: 20, opacity: 0 }}

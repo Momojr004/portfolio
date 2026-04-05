@@ -40,9 +40,9 @@
 
 - [ ] **C1** — Tous les projets datent de 2024 — ajouter projets récents (2025-2026)
 - [x] **C2** — ~~URLs live mortes~~ → supprimées (liveUrl: undefined) ou corrigées vers domaines actifs
-- [ ] **C3** — Mélange FR/EN incohérent (nav en anglais, contenu en français, SEO cible FR/SN)
+- [x] **C3** — ~~Mélange FR/EN incohérent~~ → tout traduit en français (nav, titres, labels, boutons)
 - [ ] **C4** — Stats "20+ Clients" et "2 Années" vagues et non vérifiables
-- [ ] **C5** — Pas de CV/PDF téléchargeable
+- [x] **C5** — ~~Pas de CV/PDF~~ → bouton "Télécharger mon CV" ajouté sur About (fichier à déposer dans public/cv-mouhamed-pouye.pdf)
 - [ ] **C6** — Pas de témoignages clients
 - [ ] **C7** — Section "Orchestration de l'IA" sans projet IA démontré
 
