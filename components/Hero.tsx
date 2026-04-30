@@ -20,6 +20,7 @@ export const Hero: React.FC = () => {
     }
   };
 
+
   const item: Variants = {
     hidden: { y: 100, opacity: 0 },
     show: {
